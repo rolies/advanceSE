@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>advanceSE/template/css/bootstrap.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>advanceSE/template/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>advanceSE/template/css/gradient.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	
 	<script src="<?php base_url(); ?>template/js/jquery.min.js"></script>
@@ -28,18 +29,75 @@
 								<span class="icon-bar"></span>
 							</button>
 						<!-- Your Logo --> 
-						<div class="logo"><a href="<?php base_url(); ?>"><h2>LOGO</h2></a></div>
+						<div class="logo"><a href="<?php base_url(); ?>"><img src="<?php echo base_url(); ?>advanceSE/template/img/logo-white.png" width="160px"></a></div>
 						</div>
 						<!-- Start Navigation -->
 						<div class="collapse navbar-collapse" id="collapse" role="navigation">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="goverment.html">Government</a></li>
-								<li class=""><a href="infrastructure.html">Infrastructure</a></li>
-								<li><a href="economy.html">Economy</a></li>
-								<li><a href="tourism.html">Tourism</a></li>	
+								<li><button type="button" class="btn btn-default navbar-btn" href="#modal-signup" role="button" data-toggle="modal">Register</button></li>
+								<!-- <li ><button type="button" class="btn btn-link navbar-btn" >Login</button></li> -->
+								<li>
+									<div class="dropdown">
+									  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									    Login
+									  </button>
+									  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+									    <form action="" role="form" method="">
+											<div class="form-group">
+												<input type="text" id="form-elem-1" class="form-control" placeholder="USERNAME" name="username">
+												<input type="password" id="form-elem-1" class="form-control" placeholder="PASSWORD" name="password">
+											</div>
+											<button type="submit" class="btn btn-success">SIGN IN</button>
+										</form>
+									  </div>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</div>		
 				</div>
 			</nav>
+			<div id="modal-signup" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-body text-center">
+	                    <form action=" " role="form" method="POST" class="form-horizontal">
+	                    	<div class="form-group">
+							    <label for="inputusername" class="col-sm-5 control-label">Username</label>
+							    <div class="col-sm-7">
+							      <input type="text" class="form-control" id="inputusername" required="required" name="username">
+							    </div>
+							</div>
+							 <div class="form-group">
+							    <label for="inputPass" class="col-sm-5 control-label" >Password</label>
+							    <div class="col-sm-7">
+							      <input type="password" class="form-control" id="inputPass" required="required" name="password">
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputemail" class="col-sm-5 control-label" >Email</label>
+							    <div class="col-sm-7">
+							      <input type="email" class="form-control" id="inputemail" name="email" required="required">
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="inputhp" class="col-sm-5 control-label" >Hp</label>
+							    <div class="col-sm-7">
+							      <input type="text" class="form-control" id="inputhp" required="required" name="hp">
+							    </div>
+							</div>
+							<div class="form-group">
+							    <label for="kota" class="col-sm-5 control-label" >Kota</label>
+							    <div class="col-sm-7">
+							      <input type="text" id="kota" name="kota" placeholder="kota" class="input-xlarge" required="required">
+							    </div>
+							</div>
+							<hr width="60%">
+							<a href="<?php echo base_url(); ?>advanceSE/index.php/welcome/signup" type="submit" class="btn btn-info">Register</a>
+						</form>
+						
+	                </div>
+	            </div>
+	        </div>
+	    </div>
 		</header>

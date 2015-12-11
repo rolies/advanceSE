@@ -20,8 +20,18 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{	
-		$this->load->view('include/header');
-		$this->load->view('welcome_message');
-		$this->load->view('include/footer');
+		// $data['view'] = 'display_view';
+        $this->load->view('load_view');
+	}
+	public function signup(){	
+		$user = array(
+	        'username' => $_POST['username'],
+	        'password' => md5($_POST['password']),
+	        'email' => $_POST['email'],
+	        'hp' => $_POST['hp'],
+	        'kota' => $_POST['kota']     
+        );
+        $this->load->model('sample_model');
+        $this->Sample_model->add_user($user);
 	}
 }

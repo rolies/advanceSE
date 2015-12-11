@@ -1,37 +1,84 @@
+/*Global Style*/
 a, a:hover {
 	text-decoration: none;
 }
-
 .btn {
-	font-size: 14px;
-	padding: 18px 24px;
+	padding: 12px 42px;
+	font-size: 13px;
 }
-
-::selection { background-color: #E13300; color: white; }
-::-moz-selection { background-color: #E13300; color: white; }
 
 body {
 	background-color: #fff;
 	font-family: 'Montserrat', sans-serif;
 	color: #4F5155;
-	}
-.navbar {
-	border-radius: 0;
-	background-color: none;
-	margin: 0;
 }
-section {
+/*-------- Header -----------*/
+.navbar {
+   	background: transparent;
+   	border: none;
 	margin: 0;
+	padding-top: 30px;
+}
+.navbar .btn {
+	text-transform: uppercase;
+	color: #FFF;
+	
+}
+.navbar .dropdown {
+	margin-top: 8px;
+}
+
+.dropdown-menu input {
+	margin: 18px 20px;
+	width: 200px;
+}
+.dropdown-menu {
+	min-width: 240px;
+	padding: 35px 20px;
+	text-align: center;
+}
+.modal-content{
+	border-radius: 0;
+}
+#modal-signup .modal-body{
+	color: #909291;
+	padding: 60px;
+	border-radius: 0;
+}
+#modal-signup input {
+	border-radius: 0;
+	height: 39px;	
+	background-color: #E9EAEC;
+	box-shadow: none;
+	border: none;
+}
+#inputusername { width: 140px }
+#inputPass { width: 160px }
+#inputemail { width: 180px }
+#inputhp { width: 150px }
+#inputkota { width: 190px }
+#modal-signup .btn-info {
+	background-color: #64A4E4;
+	text-transform: uppercase;
+}
+/*----------- Hero ends ---------------*/
+section {
+	margin-top: -120px;
+	top: 0;
+	padding: 0;
 }
 .main-hero {
 	color: #FFF;
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-top: 115px;
+	margin-bottom: 115px;
 }
 .ticket-home {
 	color: #FFF;
 	padding: 0 10%;
 	background: #72B7F8;
+	-webkit-box-shadow: -1px -3px 7px 1px rgba(35,31,32,0.62);
+-moz-box-shadow: -1px -3px 7px 1px rgba(35,31,32,0.62);
+box-shadow: -1px -3px 7px 1px rgba(35,31,32,0.62);
 }
 .ticket-home .btn {
 	background: #64A4E4;
@@ -57,7 +104,7 @@ section {
 	line-height: 1.8em;
 	color: #939598;
 }
-.promote .btn {
+.promote .btn, nav .btn-default {
 	background: #EE4848;
 	border: #EE4848;
 }
