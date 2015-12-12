@@ -3,7 +3,7 @@ header {
 	height: 100px;
 	margin-bottom: 120px;
 }
-.col-md-8 {
+.search {
 	margin-top: 20px;
 }
 .col-md-8 input {
@@ -41,4 +41,21 @@ header {
 	font-weight: 700;
 	font-size: 22px;
 	margin-bottom: 4px;
+}
+.navbar {
+	background-color: #72B7F8;
+	border-radius: 0;
+	height: auto;
+}
+.navbar a {
+	color: #FFF;
+	font-weight: 700;
+
+}
+.navbar ul li{
+	margin-top: -30px;
+}
+.nav > li > a:hover, .nav > li > a:focus, .nav > li > a:active {
+  background-color: #64A4E4;
+  text-decoration: none;
 }

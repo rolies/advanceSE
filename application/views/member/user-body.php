@@ -12,11 +12,13 @@
 		</div>
 		
 		<div class="col-md-8">
-			<nav class="navbar navbar-inverse">
-				<ul>
-					<li><a href="">Semua Post</a></li>
-					<li><a href="">All Reservation</a> </li>
-				</ul>
+			<nav class="navbar">
+
+					<ul class="nav navbar-nav">
+						<li><a href="#">Semua Post</a></li>
+						<li class="active"><a href="#">Semua Reservasi</a></li>
+						<li><a href="#">Notifikasi</a></li>		
+					</ul>
 			</nav>
 			<div class="col-md-12">
 				<h4> My Ticket Selling</h4>
