@@ -23,7 +23,7 @@
 				</ul>
 			</div>
 			<div class="col-md-3">
-				<img src="<?php echo base_url(); ?>advanceSE/template/img/map.jpg" class="img-responsive">
+				<img src="<?php echo base_url(); ?>template/img/map.jpg" class="img-responsive">
 				<h5> Jl. Kelud Utara 4 no 3A </h5>
 			</div>
 		</footer>

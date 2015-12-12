@@ -18,20 +18,44 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{	
-		// $data['view'] = 'display_view';
-        $this->load->view('load_view');
+	public function index() {	
+		$data['view'] = 'welcome_message';
+  		$this->load->view('load_view', $data);
+
+  // 		$this->load->library('form_validation');
+  // 		$this->form_validation->set_rules('email', 'Email', 'valid_email');
+  //       if ($this->form_validation->run() == false){
+  //       	$this->load->helper('form');
+		// } else {
+		// 	$user = array (
+		// 		'username' => $_POST['username'],
+		//         'password' => md5($_POST['password']),
+		//         'email' => $_POST['email'],
+		//         'hp' => $_POST['hp'],
+		//         'kota' => $_POST['kota']
+		// 	);
+		// 	$this->load->model('Sample_model');
+		// 	if(!$this->Sample_model->add_user($user)){
+		// 		die('Something Wrong');
+		// 	}
+		// }
+
+
+		if (isset($_POST['username'])){
+
+			$this->load->model('Sample_model');
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+			if($this->Sample_model->check_user($username, $password) == 1){
+				redirect('Member');
+			} else {
+				die('Something Wrong');
+			}
+		} else {
+			//$this->load->helper('form');
+		}
+
+
 	}
-	public function signup(){	
-		$user = array(
-	        'username' => $_POST['username'],
-	        'password' => md5($_POST['password']),
-	        'email' => $_POST['email'],
-	        'hp' => $_POST['hp'],
-	        'kota' => $_POST['kota']     
-        );
-        $this->load->model('sample_model');
-        $this->Sample_model->add_user($user);
-	}
+	
 }

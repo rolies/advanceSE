@@ -1,4 +1,4 @@
-<section class="home" data-parallax="scroll" data-image-src="<?php echo base_url(); ?>advanceSE/template/img/header.jpg">
+<section class="home" data-parallax="scroll" data-image-src="<?php echo base_url(); ?>template/img/header.jpg">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 main-hero">
@@ -32,20 +32,20 @@
 <div class="container promote">
 	<div class="row text-center">
 		<div class="col-md-4">
-			<img src="<?php echo base_url(); ?>advanceSE/template/img/promot1.png">
+			<img src="<?php echo base_url(); ?>template/img/promot1.png">
 			<h2>Sistem Aman</h2>
 			<p>Platform kami menjamin semua keamanan ditangan Anda</p>
 			<a href="#" class="btn btn-info btn-lg">Selengkapnya</a>
 		</p>
 		</div>
 		<div class="col-md-4">
-			<img src="<?php echo base_url(); ?>advanceSE/template/img/promot2.png">
+			<img src="<?php echo base_url(); ?>template/img/promot2.png">
 			<h2>Terjadwal</h2>
 			<p>Semua ticket yang terpost di sistem kami terupdate dan sesuai</p>
 			<a href="#" class="btn btn-info btn-lg">Selengkapnya</a>
 		</div>
 		<div class="col-md-4">
-			<img src="<?php echo base_url(); ?>advanceSE/template/img/promot3.png">
+			<img src="<?php echo base_url(); ?>template/img/promot3.png">
 			<h2>Pencarian</h2>
 			<p>Temukan ticket lebih mudah dengan sistem pencarian kami</p>
 			<a href="#" class="btn btn-info btn-lg">Selengkapnya</a>

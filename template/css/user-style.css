@@ -1,0 +1,44 @@
+header {
+	background: #2BD3D6;
+	height: 100px;
+	margin-bottom: 120px;
+}
+.col-md-8 {
+	margin-top: 20px;
+}
+.col-md-8 input {
+	width: 330px;
+	height: 54px;
+	box-shadow: none;
+	border: none;
+	text-transform: uppercase;
+}
+.col-md-8 .btn{
+	text-transform: uppercase;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	margin-left: 20px;
+	background: #21BAB5;
+	border: #21BAB5;
+}
+.col-md-4 img {
+	margin-right: 20px;
+}
+.greeting {
+	margin-left: 60px;
+}
+.greeting .btn{
+	border-radius: 0;
+	background: #EE4848;
+	border: #EE4848;
+	padding: 6px 30px;
+}
+.greeting small {
+	font-size: 11px;
+	color: #99A5B5;
+}
+.greeting p {
+	font-weight: 700;
+	font-size: 22px;
+	margin-bottom: 4px;
+}

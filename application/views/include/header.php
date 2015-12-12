@@ -6,9 +6,9 @@
 	<title>Home - Rpl Project</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>advanceSE/template/css/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>advanceSE/template/css/style.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>advanceSE/template/css/gradient.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/gradient.css">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	
 	<script src="<?php base_url(); ?>template/js/jquery.min.js"></script>
@@ -29,7 +29,7 @@
 								<span class="icon-bar"></span>
 							</button>
 						<!-- Your Logo --> 
-						<div class="logo"><a href="<?php base_url(); ?>"><img src="<?php echo base_url(); ?>advanceSE/template/img/logo-white.png" width="160px"></a></div>
+						<div class="logo"><a href="<?php base_url(); ?>"><img src="<?php echo base_url(); ?>template/img/logo-white.png" width="160px"></a></div>
 						</div>
 						<!-- Start Navigation -->
 						<div class="collapse navbar-collapse" id="collapse" role="navigation">
@@ -42,11 +42,12 @@
 									    Login
 									  </button>
 									  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									    <form action="" role="form" method="">
+									    <form action="" method="POST">
 											<div class="form-group">
 												<input type="text" id="form-elem-1" class="form-control" placeholder="USERNAME" name="username">
 												<input type="password" id="form-elem-1" class="form-control" placeholder="PASSWORD" name="password">
 											</div>
+											<hr>
 											<button type="submit" class="btn btn-success">SIGN IN</button>
 										</form>
 									  </div>
@@ -89,11 +90,11 @@
 							<div class="form-group">
 							    <label for="kota" class="col-sm-5 control-label" >Kota</label>
 							    <div class="col-sm-7">
-							      <input type="text" id="kota" name="kota" placeholder="kota" class="input-xlarge" required="required">
+							      <input type="text" id="kota" name="kota" placeholder="kota" class="form-control" required="required">
 							    </div>
 							</div>
 							<hr width="60%">
-							<a href="<?php echo base_url(); ?>advanceSE/index.php/welcome/signup" type="submit" class="btn btn-info">Register</a>
+							<button class="btn btn-info">Register</button>
 						</form>
 						
 	                </div>
