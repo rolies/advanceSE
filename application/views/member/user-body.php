@@ -12,14 +12,30 @@
 		</div>
 		
 		<div class="col-md-8">
-			<nav class="navbar">
+			<nav class="navbar navbar-default" role = "navigation">
+				<div class="container">
+					<div class="row fix-menu">
+						<div class="navbar-header">
+			  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">
+			  					<span class="sr-only">Toggle navigation</span>
+			  					<span class="icon-bar"></span>
+			  					<span class="icon-bar"></span>
+			  					<span class="icon-bar"></span>
+			  				</button>
+						<!-- Your Logo --> 
 
-					<ul class="nav navbar-nav">
-						<li><a href="#">Semua Post</a></li>
-						<li class="active"><a href="#">Semua Reservasi</a></li>
-						<li><a href="#">Notifikasi</a></li>		
-					</ul>
-			</nav>
+						</div>
+						<!-- Start Navigation -->
+			  			<div class="collapse navbar-collapse" id="collapse" role="navigation">
+				  			<ul class="nav navbar-nav">
+								<li class="active"><a href="#">Semua Post</a></li>
+								<li><a href="#">Semua Reservasi</a></li>
+								<li><a href="#">Notifikasi</a></li>	
+				  			</ul>
+						</div>
+					</div>		
+				</div>
+		  	</nav>
 			<div class="col-md-12">
 				<h4> My Ticket Selling</h4>
 				<img src="" alt=""> 								
