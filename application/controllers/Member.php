@@ -8,4 +8,9 @@ class Member extends CI_Controller {
 		$this->load->view('include/footer');
 	}
 	
+	public function sellpost() {
+		$this->load->view('member/user-header');
+		$this->load->view('member/sell-post');
+		$this->load->view('include/footer');
+	}
 }

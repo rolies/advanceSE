@@ -7,13 +7,13 @@
 			<div class="greeting">
 				<small>Welcome Back</small>
 				<p> Brolin </p>
-				<a href="#" class="btn btn-danger ">SELL </a>
+				<a href="<?php echo base_url(); ?>index.php/Member/sellpost" class="btn btn-danger ">SELL </a>
 			</div>
 		</div>
 		
 		<div class="col-md-8">
 			<nav class="navbar navbar-default" role = "navigation">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="row fix-menu">
 						<div class="navbar-header">
 			  				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse">

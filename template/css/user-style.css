@@ -6,7 +6,7 @@ header {
 .search {
 	margin-top: 20px;
 }
-.col-md-8 input {
+.search input {
 	width: 330px;
 	height: 54px;
 	box-shadow: none;
@@ -70,3 +70,15 @@ header {
 	padding: 25px 20px;
   	
 }
+/*---------- Sell post style strat here -----------*/
+.sellpost input, .sellpost select {
+	height: 53px;
+	border-radius: 0;
+	background: #ECEDEF;
+	border: none;
+	box-shadow: none;
+}
+#inputtipe {width: 180px}
+#inputjudul {width: 270px}
+#inputtgl {width: 200px}
+#inputhrg {width: 190px}

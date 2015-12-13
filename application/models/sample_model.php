@@ -20,4 +20,9 @@ class Sample_model extends CI_model {
 
 		return  $this->db->count_all_results('users');
 	}
+
+
+	public function add_post($post) {
+		return $this->db->insert('post', $post);
+	}
 }
