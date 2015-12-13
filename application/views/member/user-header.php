@@ -21,7 +21,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="logo"><a href="<?php base_url(); ?>"><img src="<?php echo base_url(); ?>template/img/logo-white.png" width="160px"></a></div>
+						<div class="logo"><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>template/img/logo-white.png" width="160px"></a></div>
 					</div>
 					<div class="col-md-8 search">
 						<input type="text" class="form-control pull-left" placeholder="Search" name="search">

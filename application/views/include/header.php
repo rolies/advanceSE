@@ -42,7 +42,7 @@
 									    Login
 									  </button>
 									  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-									    <form action="" method="POST">
+									    <form action="<?php echo base_url(); ?>Welcome/login" method="POST">
 											<div class="form-group">
 												<input type="text" id="form-elem-1" class="form-control" placeholder="USERNAME" name="username">
 												<input type="password" id="form-elem-1" class="form-control" placeholder="PASSWORD" name="password">
