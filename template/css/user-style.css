@@ -13,7 +13,7 @@ header {
 	border: none;
 	text-transform: uppercase;
 }
-.col-md-8 .btn{
+.btn-info{
 	text-transform: uppercase;
 	padding-top: 17px;
 	padding-bottom: 17px;
@@ -70,6 +70,23 @@ header {
 	padding: 25px 20px;
   	
 }
+/*--------------left side -------------------------*/
+.ticket {
+	background-color:#72B7F8;
+	padding:10px;
+	color:#fff;
+	margin-bottom:15px;
+	}
+.centerRight {
+	background-color:#f2f3f7;
+	padding:15px 0;}
+.btn-pink{
+	background-color: #f19cbb;
+    border-color: #ff6699;
+    color: #fff;}
+.btn-success{
+	background-color:#07cdd0;
+	border-color:#009999;}
 /*---------- Sell post style strat here -----------*/
 .sellpost input, .sellpost select {
 	height: 53px;

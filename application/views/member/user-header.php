@@ -25,7 +25,7 @@
 					</div>
 					<div class="col-md-8 search">
 						<input type="text" class="form-control pull-left" placeholder="Search" name="search">
-						<button class="btn btn-success">OPSI Lanjutan</button>
+						<button class="btn btn-info">OPSI Lanjutan</button>
 					</div>
 				</div>
 			</div>
