@@ -22,7 +22,7 @@ class Sample_model extends CI_model {
 	}
 
 
-	public function add_post($post) {
-		return $this->db->insert('post', $post);
+	public function add_sellpost($post) {
+		return $this->db->insert('sellpost', $post);
 	}
 }

@@ -78,7 +78,22 @@ header {
 	border: none;
 	box-shadow: none;
 }
+.sellpost textarea {
+	border-radius: 0;
+	background: #ECEDEF;
+	border: none;
+	box-shadow: none;
+	width: 480px;
+	min-height: 200px;
+}
 #inputtipe {width: 180px}
 #inputjudul {width: 270px}
 #inputtgl {width: 200px}
 #inputhrg {width: 190px}
+#inputkota {width: 260px}
+
+.sellpost .btn {
+	color: #FFF;
+	background: #64A4E4;
+	margin-bottom: 90px;
+}

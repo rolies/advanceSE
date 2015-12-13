@@ -12,15 +12,16 @@
 		</div>
 		
 		<div class="col-md-8 sellpost">
-			<form class="form-horizontal">
+			<p>Tanggal "<?php echo date('Y-m-d'); ?>"</p>
+			<form action=" " role="form" method="POST" class="form-horizontal">
 				<div class="form-group">
 					<label for="inputtipe" class="col-sm-2 control-label">Tipe</label>
 					<div class="col-sm-10">
 					   	<select class="form-control" id="inputtipe" name="tipe">
-					  		<option value="Government">Government</option>
-						  	<option value="Infrastructure">Infrastructure</option>
-						  	<option value="Economy">Economy</option>
-						  	<option value="Tourism">Tourism</option>
+					  		<option value="Perjalanan">Perjalanan</option>
+						  	<option value="Pariwisata">Pariwisata</option>
+						  	<option value="Konser">Konser</option>
+						  	<option value="Pertunjukan">Pertunjukan</option>
 						</select>
 					</div>
 				</div>
@@ -48,13 +49,27 @@
 						<input type="text" class="form-control" id="inputhrg" name="harga">
 					</div>
 				</div>
+				<div class="form-group">
+					<label for="inputkota" class="col-sm-2 control-label">Kota</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputkota" name="kota">
+					</div>
+				</div>
 				
 				<div class="form-group">
-				    <div class="col-sm-offset-2 col-sm-10">
-					   	<hr>
-					    <button class="btn btn-default btn-lg">Terbitkan</button>
-				    </div>
+					<label for="inputdes" class="col-sm-2 control-label">Deskripsi</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" id="inputdes" name="deskripsi"></textarea>
+					</div>
 				</div>
+				<div class="form-group">
+					<label for="inputgambar" class="col-sm-2 control-label">Gambar</label>
+					<div class="col-sm-10">
+					   	<input type="file" id="inputgambar" name="picture" >
+					</div>
+		  		</div>
+			  	<hr>
+			    <button class="btn btn-default btn-lg">Terbitkan</button>
 			</form>
 		</div>
 	</div>
