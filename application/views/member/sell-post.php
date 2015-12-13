@@ -12,7 +12,6 @@
 		</div>
 		
 		<div class="col-md-8 sellpost">
-			<p>Tanggal "<?php echo date('Y-m-d'); ?>"</p>
 			<form action=" " role="form" method="POST" class="form-horizontal">
 				<div class="form-group">
 					<label for="inputtipe" class="col-sm-2 control-label">Tipe</label>
