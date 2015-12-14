@@ -7,7 +7,7 @@
 			<div class="greeting">
 				<small>Welcome Back</small>
 				<p> Brolin </p>
-				<a href="#" class="btn btn-danger ">SELL </a>
+				<a href="<?php echo base_url();?>Member/sellpost" class="btn btn-danger ">SELL </a>
 			</div>
 			<div class="my-selling">
 				<div class=" ticket">
@@ -67,24 +67,38 @@
 					</div>		
 				</div>
 		  	</nav>
+		  	<!-- Active ticket -->
+			<?php if ($h->num_rows() > 0): ?>
+		  	<?php  foreach ($h->result() as $row) {?>
 		  	<div class="active-ticket">
 		  		<div class="col-md-6 img-area">
 					<img src="<?php echo base_url(); ?>template/img/ticket1.jpg" width="120px" class="pull-left img-responsive">
+				            <strong><?php echo $row->judul;?></strong>
+				            <p class="harga">IDR <?php echo $row->harga;?></p>  
 					<div class="info-small">
-						<strong>Bon Jovi</strong>
-						<p class="harga"> IDR 120.000 </p>
-						<small> ndak ketok tulisannya bos </small>
-						<a href="#" class="btn btn-warning">Reserved</a>
+						<small>Tiket : <?php echo $row->tipe;?></small>
+						<?php if ($row->status == 'active'): ?>
+							<a href="#" class="btn btn-success">No reserve</a>
+						<?php else: ?>
+							<a href="#" class="btn btn-info">Reserved</a>
+						<?php endif ?>
+						
 					</div>
+
 				</div>
 				<div class="col-md-3">
-					<p> Jl Imam Bonjol , Ciputat </p>
+					<p> <?php echo $row->alamat;?></p>
 				</div>
 				<div class="col-md-3">
 					<a href="#" class="btn btn-info"> Edit </a>
 				</div>
 			</div>
-
+			<div class="line-white"></div>
+			<?php } ?>
+			<?php else: ?>
+				<p style="margin-left: 15px; color: #8FB94B">Anda tidak memiliki post ticket active</p>
+			<?php endif ?>
+			<!-- Active ticket end -->
 			<div class="list-ticket">
 				<hr>
 				<div class="col-md-2">
@@ -93,7 +107,7 @@
 				<div class="info-small">
 					<h5>Konser Iwan Fals </h5>
 					<small>IDR 120.000 sampingnya gk keliatan bos</small><br>
-					<a href="#" class="btn btn-danger">Reserved</a>
+					<a href="#" class="btn btn-danger">deactived</a><small> *post ini melanggar peraturan kami</small>
 				</div>
 				<hr>
 				<div class="col-md-2">
@@ -102,7 +116,7 @@
 				<div class="info-small">
 					<h5> Trip Perjalanan ke Parang Tritis </h5>
 					<small>IDR 120.000 sampingnya gk keliatan bos</small><br>
-					<a href="#" class="btn btn-success">Reserved</a>
+					<a href="#" class="btn btn-info">sold</a>
 				</div>
 				<hr>
 				<div class="col-md-2">
@@ -111,12 +125,13 @@
 				<div class="info-small">
 					<h5> Trip Konser Owl City</h5>
 					<small>IDR 120.000 sampingnya gk keliatan bos</small><br>
-					<a href="#" class="btn btn-success btn-xs ">Reserved</a>
+					<a href="#" class="btn btn-info">sold</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>	
+<!-- http://www.formget.com/codeigniter-upload-image/ -->
 
 
 

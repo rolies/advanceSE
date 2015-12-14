@@ -21,8 +21,13 @@ class Sample_model extends CI_model {
 		return  $this->db->count_all_results('users');
 	}
 
-
 	public function add_sellpost($post) {
 		return $this->db->insert('sellpost', $post);
+	}
+
+	public function read_active($name){
+		$query = "SELECT * FROM $name WHERE status='active' OR status='reserved'";
+		
+		return $this->db->query($query);
 	}
 }

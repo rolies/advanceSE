@@ -13,7 +13,7 @@ header {
 	border: none;
 	text-transform: uppercase;
 }
-.btn-info{
+.active-ticket .col-md-3 .btn{
 	text-transform: uppercase;
 	padding-top: 17px;
 	padding-bottom: 17px;
@@ -96,6 +96,12 @@ header {
 }
 .active-ticket small {
 	color: #8D8D8F;
+	clear: both;
+	float: none;
+}
+.line-white {
+	height: 20px;
+	width: auto;
 }
 .member-area {
 	padding-right: 40px;

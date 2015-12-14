@@ -2,18 +2,21 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 main-hero">
-				<h1>NO MORE WASTE ... </h1>
-				<p>Tidak dapat menghadiri acara darti ticket yang anda beli ?  </p>
-				<p> Pajang saja di web kami. jutaan orang yang membutuhkan diluar sana 
-				akan mudah untuk menemukannya </p>
-
+				<div class="hero-text">
+					<h1>NO MORE WASTE ... </h1>
+					<p>Tidak dapat menghadiri acara darti ticket yang anda beli ?  </p>
+					<p> Pajang saja di web kami. jutaan orang yang membutuhkan diluar sana 
+					akan mudah untuk menemukannya </p>
+				</div>
 				<a href="#" class="btn btn-info btn-lg">CARA KERJA </a>
-				<h1> CARI </h1>
-				<form class="navbar-form navbar-left" role="search">
-					<div class="form-group">
-						<input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-					</div>
-				</form>
+				<div class="cari">
+					<h2> CARI </h2>
+					<form action="" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" name="search-hero">
+						</div>
+					</form>
+				</div>
 			</div>
 		</div> 
 	</div>

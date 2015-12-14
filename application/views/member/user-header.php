@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equif="X-UA-Compatible" content="IE=edge, chrome=1">
-		<title>Member Dashboard</title>
+		<title><?php echo $page_title ?></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/bootstrap.css">
