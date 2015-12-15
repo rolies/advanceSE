@@ -13,7 +13,7 @@ header {
 	border: none;
 	text-transform: uppercase;
 }
-.active-ticket .col-md-3 .btn{
+.active-ticket .col-md-3 .btn-info{
 	text-transform: uppercase;
 	padding-top: 17px;
 	padding-bottom: 17px;
@@ -21,6 +21,10 @@ header {
 	background: #21BAB5;
 	border: #21BAB5;
 }
+.active-ticket .col-md-3 .btn-link{
+	text-decoration: underline;
+}
+
 .col-md-4 img {
 	margin-right: 20px;
 }
@@ -80,11 +84,15 @@ header {
 .active-ticket .img-area {
 	border-right: 1px solid #DDD;
 }
+.info-small ul li{
+	display: inline;
+}
 .info-small .btn{
 	padding: 2px 10px 4px 10px;
 	border-radius: 50px;
 	margin-top: 8px;
 	border: none;
+
 }
 .active-ticket img {
 	margin-right: 10px;

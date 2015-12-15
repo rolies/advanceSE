@@ -91,6 +91,7 @@
 				</div>
 				<div class="col-md-3">
 					<a href="#" class="btn btn-info"> Edit </a>
+					<a href="#" class="btn btn-link">mark sold</a>
 				</div>
 			</div>
 			<div class="line-white"></div>
