@@ -43,7 +43,7 @@
 		</div>
 		
 		<div class="col-md-7 sellpost col-md-offset-1">
-			<form action=" " role="form" method="POST" class="form-horizontal">
+			<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 				<div class="form-group">
 					<label for="inputtipe" class="col-sm-2 control-label">Tipe</label>
 					<div class="col-sm-10">
@@ -64,13 +64,14 @@
 				</div>
 
 				<div class="form-group">
-					<label for="inputtgl" class="col-sm-2 control-label">Tanggal</label>
+					<label for="dtp_input1" class="col-md-2 control-label">Tanggal & waktu</label>
+
 					<div class="col-sm-10">
-					    <select class="form-control" id="inputtgl" name="tanggal">
-						  	<option value="Complain">Komplain</option>
-						 	<option value="Review">Review</option>
-						  	<option value="Update">Update</option>
-						</select>
+					    <div class="input-group date form_datetime col-md-6" data-date="2015-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
+		                    <input class="form-control" size="18" type="text" value="" readonly name="tanggal">
+		                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+							<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+		                </div>
 					</div>
 				</div>
 				<div class="form-group">
@@ -82,7 +83,7 @@
 				<div class="form-group">
 					<label for="inputkota" class="col-sm-2 control-label">Kota</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputkota" name="kota">
+						<input type="text" class="form-control" id="inputkota" name="alamat">
 					</div>
 				</div>
 				
@@ -95,7 +96,7 @@
 				<div class="form-group">
 					<label for="inputgambar" class="col-sm-2 control-label">Gambar</label>
 					<div class="col-sm-10">
-					   	<input type="file" id="inputgambar" name="picture" >
+					   	<input type="file" id="inputgambar" name="gambar-ticket">
 					</div>
 		  		</div>
 			  	<hr>
@@ -104,3 +105,16 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		forceParse: 0,
+        showMeridian: 0,
+        pickerPosition: "bottom-left"
+    });
+	
+</script>

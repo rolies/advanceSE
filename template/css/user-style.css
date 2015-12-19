@@ -46,31 +46,25 @@ header {
 	font-size: 22px;
 	margin-bottom: 4px;
 }
-.navbar{
+.nav{
 	background-color: #72B7F8;
 	border-radius: 0;
 	height: auto;
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
-.navbar-default a{
-	color: #FFFFff;
-}
-.navbar-default .navbar-nav > li {
-	margin-top: -30px;
-	
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
   background-color: #64A4E4;
-  color: #FFF;
+  border-radius: 0;
+  color: #fff;
 }
-.navbar-default .navbar-nav > li > a {
+
+.nav li > a:hover {
+	background-color: #64A4E4;
+	border-radius: 0;
   	color: #FFF;
 }
-.navbar-default .navbar-nav > li > a:hover {
-	 background-color: #64A4E4;
-  	color: #FFF;
-}
-.navbar-default .navbar-nav > li >a{
+.nav li >a{
+	color: #FFF;
 	padding: 25px 20px;
   	
 }
@@ -136,9 +130,7 @@ header {
 	color:#fff;
 	margin-bottom:15px;
 }
-.list-ticket {
-	margin-top: 50px;
-	margin-bottom: 50px;
+.list-ticket {	margin-bottom: 50px;
 }
 /*---------- Sell post style strat here -----------*/
 .sellpost input, .sellpost select {
@@ -158,7 +150,7 @@ header {
 }
 #inputtipe {width: 180px}
 #inputjudul {width: 270px}
-#inputtgl {width: 200px}
+
 #inputhrg {width: 190px}
 #inputkota {width: 260px}
 

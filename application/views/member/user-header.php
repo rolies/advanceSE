@@ -9,11 +9,13 @@
 		<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/bootstrap.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/style.css">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/user-style.css">
+		<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/bootstrap-datetimepicker.min.css">
+
 		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 		
 		<script src="<?php echo base_url(); ?>template/js/jquery.min.js"></script>
 		<script src="<?php echo base_url(); ?>template/js/bootstrap.js"></script>
-		<script src="<?php echo base_url(); ?>template/js/parallax.js"></script>
+		<script src="<?php echo base_url(); ?>template/js/bootstrap-datetimepicker.min.js"></script>
 		<script src="<?php echo base_url(); ?>template/js/init.js"></script>
 	</head>
 	<body>
