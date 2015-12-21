@@ -7,6 +7,8 @@ class Member extends CI_Controller {
 		$data['page_title'] = 'Member Dashboard';
 		$this->load->model('Sample_model');
 		$data['h'] = $this->Sample_model->read_active('sellpost');
+		$data['h_satu'] = $this->Sample_model->read_active_satu('sellpost');
+		$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost');
   		$this->load->view('member/user-header', $data);
 		$this->load->view('member/user-body', $data);
 		$this->load->view('include/footer');
@@ -31,7 +33,8 @@ class Member extends CI_Controller {
 				'harga' => $_POST['harga'],
 				'alamat' => $_POST['alamat'],
 				'deskripsi' => $_POST['deskripsi'],
-				'gambar' => $this->upload->data('file_name')
+				'gambar' => $this->upload->data('file_name'),
+				'status' =>'active',
 
 			);
 			

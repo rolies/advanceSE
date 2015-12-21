@@ -27,7 +27,17 @@ class Sample_model extends CI_model {
 
 	public function read_active($name){
 		$query = "SELECT * FROM $name WHERE status='active' OR status='reserved'";
-		
 		return $this->db->query($query);
 	}
+
+	public function read_deactived($name){
+		$query = "SELECT * FROM $name WHERE status='sold' OR status='deactived'";
+		return $this->db->query($query);
+	}
+
+	public function read_active_satu($name){
+		$query = "SELECT * FROM $name WHERE status='active' OR status='reserved' LIMIT 1";
+		return $this->db->query($query);
+	}
+
 }

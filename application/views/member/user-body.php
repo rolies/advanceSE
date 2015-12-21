@@ -14,15 +14,27 @@
 					<h5> My Ticket Selling</h5>
 				</div>
 				<div class="row">
+				
+				<?php if ($h_satu->num_rows() > 0): ?>
+				<?php  foreach ($h_satu->result() as $row) {?>
 					<div class="col-md-5">
-						<img src="<?php echo base_url(); ?>template/img/ticket1.jpg" class="pull-left img-responsive">
+						<img src="<?php echo base_url(); ?>template/img/<?php echo $row->gambar;?>" class="pull-left img-responsive">
 					</div>
+
 					<div class="curr-sell-small">
-						<strong> Bon Jovi </strong>
-						<p class="harga"> IDR 120.000 </p>
-						<a href="#" class="btn btn-warning ">Reserved </a>
-						
+						<strong><?php echo $row->judul;?></strong>
+						<p class="harga"> IDR <?php echo $row->harga;?> </p>
+						<?php if ($row->status == 'active'): ?>
+							<a href="#" class="btn btn-warning ">No Reserved </a>
+						<?php else: ?>
+							<a href="#" class="btn btn-info">Reserved</a>
+						<?php endif ?>
 					</div>
+					<?php } ?>
+				<?php else: ?>
+					<p style="margin-left: 15px; color: #8FB94B">Anda tidak memiliki post ticket active</p>
+				<?php endif ?>
+					
 				</div>
 			</div>
 			<div class="my-reserve">
@@ -55,7 +67,7 @@
 				  	<?php  foreach ($h->result() as $row) {?>
 				  	<div class="active-ticket">
 				  		<div class="col-md-6 img-area">
-							<img src="<?php echo base_url(); ?>template/img/ticket1.jpg" width="120px" class="pull-left img-responsive">
+							<img src="<?php echo base_url(); ?>template/img/<?php echo $row->gambar;?>" width="120px" class="pull-left img-responsive" alt="No image">
 						            <strong><?php echo $row->judul;?></strong>
 						            <p class="harga">IDR <?php echo $row->harga;?></p>  
 							<div class="info-small">
@@ -84,33 +96,21 @@
 					<?php endif ?>
 					<!-- Active ticket end -->
 					<div class="list-ticket">
+						<?php  foreach ($h_deactived->result() as $row) {?>
 						<hr>
 						<div class="col-md-2">
-							<img src="<?php echo base_url(); ?>template/img/ticket1.jpg" class="pull-left img-responsive">
+							<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" class="pull-left img-responsive">
 						</div>
 						<div class="info-small">
-							<h5>Konser Iwan Fals </h5>
-							<small>IDR 120.000 sampingnya gk keliatan bos</small><br>
-							<a href="#" class="btn btn-danger">deactived</a><small> *post ini melanggar peraturan kami</small>
+							<h5><?php echo $row->judul;?></h5>
+							<small>IDR <?php echo $row->harga;?> sampingnya gk keliatan bos</small><br>
+							<?php if ($row->status == 'deactived'): ?>
+								<a href="#" class="btn btn-danger">deactived</a><small> *<?php echo $row->keterangan;?></small>
+							<?php else: ?>
+									<a href="#" class="btn btn-info">sold</a>
+							<?php endif ?>
 						</div>
-						<hr>
-						<div class="col-md-2">
-							<img src="<?php echo base_url(); ?>template/img/ticket1.jpg" class="pull-left img-responsive">
-						</div>
-						<div class="info-small">
-							<h5> Trip Perjalanan ke Parang Tritis </h5>
-							<small>IDR 120.000 sampingnya gk keliatan bos</small><br>
-							<a href="#" class="btn btn-info">sold</a>
-						</div>
-						<hr>
-						<div class="col-md-2">
-							<img src="<?php echo base_url(); ?>template/img/ticket1.jpg" class="pull-left img-responsive">
-						</div>
-						<div class="info-small">
-							<h5> Trip Konser Owl City</h5>
-							<small>IDR 120.000 sampingnya gk keliatan bos</small><br>
-							<a href="#" class="btn btn-info">sold</a>
-						</div>
+						<?php } ?>
 					</div>
 				</div>
 				<div class="tab-pane" id="allreserve">
@@ -122,19 +122,7 @@
 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
 				<div class="tab-pane active" id="notifikasi">
-					
-					 <legend>Test</legend>
-            <div class="form-group">
-                <label for="dtp_input1" class="col-md-3 control-label">DateTime Picking</label>
-                <div class="input-group date form_datetime col-md-6" data-date="2015-09-16T05:25:07Z" data-date-format="yyyy-mm-dd hh:ii" data-link-field="dtp_input1">
-                    <input class="form-control" size="16" type="text" value="" readonly>
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-					<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
-                </div>
-				<input type="hidden" id="dtp_input1" value="" /><br/>
-            </div>
-
-
+					<p>Brolin reserve ticket (judul ticket)	</p>
 				</div>
 			</div>
 		</div>
