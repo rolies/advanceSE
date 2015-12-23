@@ -28,12 +28,23 @@ class Welcome extends CI_Controller {
 	public function login() {
 		if (isset($_POST['username'])){
 
-			$username = $_POST['username'];
-			$password = $_POST['password'];
+			$credentials = array(
+				'username' => $_POST['username'],
+				'password' => md5($_POST['password'])
+				);
+
 			$this->load->model('Sample_model');
-			if($this->Sample_model->check_user($username, $password) == 1){
+			$user = $this->Sample_model->check_user($credentials);
+			if ($user->num_rows() == 1) {
+				$user = $user->row();
+				$session = array (
+					'username' => $user->username,
+					'is_logged_in' => TRUE
+
+					);
+				$this->session->set_userdata($session);
 				redirect('Member');
-			} else {
+			}else {
 				die('Something Wrong');
 			}
 		} else {

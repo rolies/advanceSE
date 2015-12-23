@@ -2,53 +2,77 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Member extends CI_Controller {
+	public function __construct(){
+		parent::__construct();
+		$this->validate_user();
+	}
+	public function validate_user() {
+		$is_logged_in = $this->session->userdata('is_logged_in');
+			if (!isset($is_logged_in) || $is_logged_in != true) {
+				echo "You are not allowed to access this Page";
+			}
+	}
 
-	public function index() {	
-		$data['page_title'] = 'Member Dashboard';
-		$this->load->model('Sample_model');
-		$data['h'] = $this->Sample_model->read_active('sellpost');
-		$data['h_satu'] = $this->Sample_model->read_active_satu('sellpost');
-		$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost');
-  		$this->load->view('member/user-header', $data);
-		$this->load->view('member/user-body', $data);
-		$this->load->view('include/footer');
+	public function index() {
+		if (isset($_SESSION['is_logged_in']))
+		{
+			$data['name'] = $_SESSION['username'];
+			$data['page_title'] = 'Member Dashboard';
+			$this->load->model('Sample_model');
+			$data['h'] = $this->Sample_model->read_active('sellpost', $_SESSION['username']);
+			$data['h_satu'] = $this->Sample_model->read_active_satu('sellpost', $_SESSION['username']);
+			$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost', $_SESSION['username']);
+	  		$this->load->view('member/user-header', $data);
+			$this->load->view('member/user-body', $data);
+			$this->load->view('include/footer');
+		} 
 	}
 	
 	public function sellpost() {
-		$config['upload_path']          = './uploads/ticket';
-        $config['allowed_types']        = 'gif|jpg|png';
-        $config['max_size']             = 100;
-        $config['max_width']            = 1024;
-        $config['max_height']           = 768;
+		if (isset($_SESSION['is_logged_in']))
+		{
+			$config['upload_path']          = './uploads/ticket';
+	        $config['allowed_types']        = 'gif|jpg|png';
+	        $config['max_size']             = 100;
+	        $config['max_width']            = 1024;
+	        $config['max_height']           = 768;
 
-		$data['page_title'] = 'Sell post - Dashboard';
-		if (isset($_POST['tipe'])){
-			$this->load->library('upload', $config);
-            $this->upload->do_upload('gambar-ticket');
+			$data['page_title'] = 'Sell post - Dashboard';
+			if (isset($_POST['tipe'])){
+				$this->load->library('upload', $config);
+	            $this->upload->do_upload('gambar-ticket');
 
-			$post = array (
-				'tipe' => $_POST['tipe'],
-				'judul' => $_POST['judul'],
-				'tanggal' => $_POST['tanggal'],
-				'harga' => $_POST['harga'],
-				'alamat' => $_POST['alamat'],
-				'deskripsi' => $_POST['deskripsi'],
-				'gambar' => $this->upload->data('file_name'),
-				'status' =>'active',
+				$post = array (
+					'tipe' => $_POST['tipe'],
+					'judul' => $_POST['judul'],
+					'tanggal' => $_POST['tanggal'],
+					'harga' => $_POST['harga'],
+					'alamat' => $_POST['alamat'],
+					'deskripsi' => $_POST['deskripsi'],
+					'gambar' => $this->upload->data('file_name'),
+					'status' =>'active',
 
-			);
-			
-			$this->load->model('Sample_model');
-			if(!$this->Sample_model->add_sellpost($post)){
-				die('Something Wrong');
+				);
+				
+				$this->load->model('Sample_model');
+				if(!$this->Sample_model->add_sellpost($post)){
+					die('Something Wrong');
+				} else {
+					echo "Post sukses bro";
+				}
 			} else {
-				echo "Post sukses bro";
-			}
-		} else {
-			$this->load->helper('form');
-			$this->load->view('member/user-header', $data);
-			$this->load->view('member/sell-post');
-			$this->load->view('include/footer');
-		}  
+				$this->load->helper('form');
+				$this->load->view('member/user-header', $data);
+				$this->load->view('member/sell-post');
+				$this->load->view('include/footer');
+			} 
+		} 
 	}
+
+	function logout(){
+		$this->session->sess_destroy();
+		redirect('Welcome');
+	}
+
+
 }

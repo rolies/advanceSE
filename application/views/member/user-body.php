@@ -6,7 +6,7 @@
 			<img src="<?php echo base_url(); ?>template/img/user.jpg" width="80px" class="pull-left">
 			<div class="greeting">
 				<small>Welcome Back</small>
-				<p> Brolin </p>
+				<p><?php echo $name; ?></p>
 				<a href="<?php echo base_url();?>Member/sellpost" class="btn btn-danger ">SELL </a>
 			</div>
 			<div class="my-selling">
@@ -59,6 +59,7 @@
 			  <li><a href="#allpost" data-toggle="pill">Semua Post</a></li>
 			  <li><a href="#allreserve" data-toggle="pill">Semua Reservasi</a></li>
 			  <li class="active"><a href="#notifikasi" data-toggle="pill" `>Notifikasi</a></li>
+			  <li class="logout pull-right text-center"><a href="<?php echo base_url(); ?>Member/logout" class="logout-link"><span class="glyphicon glyphicon-log-out"></span><br>Logout</a></li>
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane" id="allpost">
