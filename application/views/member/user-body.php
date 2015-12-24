@@ -6,9 +6,10 @@
 			<img src="<?php echo base_url(); ?>template/img/user.jpg" width="80px" class="pull-left">
 			<div class="greeting">
 				<small>Welcome Back</small>
-				<p><?php echo $name; ?></p>
+				<p><?php echo $name; ?> <a href="<?php echo base_url();?>Member/edit_profil" data-toggle="tooltip" data-placement="right" title="Edit Profil"><span class="glyphicon glyphicon-edit"></span></a></p>
 				<a href="<?php echo base_url();?>Member/sellpost" class="btn btn-danger ">SELL </a>
 			</div>
+
 			<div class="my-selling">
 				<div class=" ticket">
 					<h5> My Ticket Selling</h5>
@@ -56,7 +57,7 @@
 				
 		<div class="col-md-7 col-md-offset-1">
 			<ul class="nav nav-pills">
-			  <li class="active"><a href="#notifikasi" data-toggle="pill" `>Notifikasi</a></li>
+			  <li class="active" class="absolute-li"><a href="#notifikasi" data-toggle="pill">Notifikasi <div class="notif"> 1</div></a></li>
 			  <li><a href="#allpost" data-toggle="pill">Semua Post</a></li>
 			  <li><a href="#allreserve" data-toggle="pill">Semua Reservasi</a></li>
 			  <li class="logout pull-right text-center"><a href="<?php echo base_url(); ?>Member/logout" class="logout-link"><span class="glyphicon glyphicon-log-out"></span><br>Logout</a></li>
@@ -146,6 +147,11 @@
 		</div>
 	</div>
 </div>	
+<script>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
 <!-- http://www.formget.com/codeigniter-upload-image/ -->
 
 

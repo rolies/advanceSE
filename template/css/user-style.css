@@ -13,6 +13,13 @@ header {
 	border: none;
 	text-transform: uppercase;
 }
+.search .btn {
+	background: #10B9BC;
+	border: none;
+	margin-left: 18px;
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
 .active-ticket .col-md-3 .btn-info{
 	text-transform: uppercase;
 	padding-top: 17px;
@@ -46,6 +53,10 @@ header {
 	font-size: 22px;
 	margin-bottom: 4px;
 }
+p .glyphicon-edit {
+	font-size: 20px;
+	color: #ACA5B5;
+}
 .nav{
 	background-color: #72B7F8;
 	border-radius: 0;
@@ -62,6 +73,24 @@ header {
 	background-color: #64A4E4;
 	border-radius: 0;
   	color: #FFF;
+}
+.absolute-li {
+	position: absolute;
+}
+
+.notif {
+	position: relative;
+	top: -60px;
+	right: -55px;
+	border-radius: 50%;
+	text-align: center;
+	width: 25px; height: 25px;
+	padding-top: 1px;
+	background: red;
+	border: 1px solid red;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(255,0,0,1);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(255,0,0,1);
+	box-shadow: 0px 1px 2px 0px rgba(255,0,0,1);
 }
 .nav li >a{
 	color: #FFF;
@@ -119,6 +148,10 @@ header {
 }
 .member-area {
 	padding-right: 40px;
+	padding-bottom: 120px;
+}
+.col-md-offset-1 {
+	padding-bottom: 120px;
 }
 .my-selling, .my-reserve{
 	margin-top: 56px;
@@ -179,4 +212,21 @@ header {
 	padding: 7px 19px 9px 19px;
 	background: #D8EBFA;
 	border: 1px dashed #64A4E4;
+}
+/*Style for edit profile*/
+.edit-prof {
+	margin-bottom: 120px;
+}
+.edit-password {
+	margin-bottom: 120px;
+	border-left: 1px solid #DDD;
+}
+.edit-password input{
+	width: 180px;
+	box-shadow: none;
+	border-radius: 0;
+}
+.edit-hp input{
+	box-shadow: none;
+	border-radius: 0;
 }

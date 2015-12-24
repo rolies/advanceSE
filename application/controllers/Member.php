@@ -6,6 +6,7 @@ class Member extends CI_Controller {
 		parent::__construct();
 		$this->validate_user();
 	}
+
 	public function validate_user() {
 		$is_logged_in = $this->session->userdata('is_logged_in');
 			if (!isset($is_logged_in) || $is_logged_in != true) {
@@ -74,5 +75,14 @@ class Member extends CI_Controller {
 		redirect('Welcome');
 	}
 
-
+	public function edit_profil(){
+		if (isset($_SESSION['is_logged_in']))
+		{
+			$data['name'] = $_SESSION['username'];
+			$data['page_title'] = 'Edit Profil - Dashboard';
+			$this->load->view('member/user-header', $data);
+			$this->load->view('member/edit-profil', $data);
+			$this->load->view('include/footer');
+		}
+	}
 }
