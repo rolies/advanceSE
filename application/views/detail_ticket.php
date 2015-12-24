@@ -12,6 +12,7 @@
 			<small>Member sejak : <?php echo "$detail_ticket_user->regdate"; ?></small>
 			<p class="nohp"><?php echo "$detail_ticket_user->hp"; ?><span class="pull-right">Perlihatkan</span></p>
 			<p class="deskripsi"><?php echo "$detail_ticket->deskripsi"; ?></p>
+			<a href="" class="btn btn-info">Reserve</a>
 		</div>
 	</div>
 </div>

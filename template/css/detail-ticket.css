@@ -35,8 +35,16 @@ header {
 p.deskripsi{
 	font-family: 'montserratregular';
 	color: #AAA;
+	margin-bottom: 40px;
 }
 p.deskripsi::first-line{
 	font-family: 'montserratbold';
 	color: #555;
+}
+.detail-deskrip .btn {
+	background: #4BA4DC;
+	border: none;
+	border-radius: 0;
+	font-size: 16px;
+	text-transform: uppercase;
 }
