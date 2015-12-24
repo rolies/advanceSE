@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/bootstrap.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/style.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/gradient.css">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>template/css/fonts.css">
 	
 	<script src="<?php base_url(); ?>template/js/jquery.min.js"></script>
 	<script src="<?php base_url(); ?>template/js/bootstrap.js"></script>
