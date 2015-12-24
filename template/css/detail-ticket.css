@@ -33,10 +33,10 @@ header {
 	font-size: 14px;
 }
 p.deskripsi{
-	font-weight: lighter;
+	font-family: 'montserratregular';
 	color: #AAA;
 }
 p.deskripsi::first-line{
-	font-weight: 700;
+	font-family: 'montserratbold';
 	color: #555;
 }
