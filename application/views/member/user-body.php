@@ -56,9 +56,9 @@
 				
 		<div class="col-md-7 col-md-offset-1">
 			<ul class="nav nav-pills">
+			  <li class="active"><a href="#notifikasi" data-toggle="pill" `>Notifikasi</a></li>
 			  <li><a href="#allpost" data-toggle="pill">Semua Post</a></li>
 			  <li><a href="#allreserve" data-toggle="pill">Semua Reservasi</a></li>
-			  <li class="active"><a href="#notifikasi" data-toggle="pill" `>Notifikasi</a></li>
 			  <li class="logout pull-right text-center"><a href="<?php echo base_url(); ?>Member/logout" class="logout-link"><span class="glyphicon glyphicon-log-out"></span><br>Logout</a></li>
 			</ul>
 			<div class="tab-content">
@@ -115,14 +115,31 @@
 					</div>
 				</div>
 				<div class="tab-pane" id="allreserve">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="reserved-area active">
+								<h5><a href="#">Tiket berlibur Bromo</a></h5>
+								<img src="./uploads/ticket/ticket1.jpg" alt="ticket-reserve" class="img-responsive img-thumbnail">
+								<h5>Owner : Brolin <br><small>IDR 200.000</small></h5>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="reserved-area">
+								<h5><a href="#">Tiket pariwisata Bali</a></h5>
+								<img src="./uploads/ticket/ticket2.jpg" alt="ticket-reserve" class="img-responsive img-thumbnail">
+								<h5>Owner : Youngky <br><small>IDR 220.000</small></h5>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="reserved-area">
+								<h5><a href="#">Tiket konser Iwan fals</a></h5>
+								<img src="./uploads/ticket/ticket1.jpg" alt="ticket-reserve" class="img-responsive img-thumbnail">
+								<h5>Owner : Brolin <br><small>IDR 200.000</small></h5>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="tab-pane active" id="notifikasi">
+				<div class="tab-pane  active" id="notifikasi">
 					<p>Brolin reserve ticket (judul ticket)	</p>
 				</div>
 			</div>

@@ -66,7 +66,7 @@ header {
 .nav li >a{
 	color: #FFF;
 	padding-left: 20px;
-	padding-right: 20px;
+	padding-right: 23px;
 	height: 80px;
 	padding-top: 30px;
   	
@@ -170,4 +170,13 @@ header {
 	color: #FFF;
 	background: #64A4E4;
 	margin-bottom: 90px;
+}
+#allreserve .col-md-4 .reserved-area{
+	padding: 8px 20px 10px 20px;
+	background: #F2F3F7;
+}
+#allreserve .col-md-4 .active{
+	padding: 7px 19px 9px 19px;
+	background: #D8EBFA;
+	border: 1px dashed #64A4E4;
 }
