@@ -19,11 +19,11 @@
 				<?php if ($h_satu->num_rows() > 0): ?>
 				<?php  foreach ($h_satu->result() as $row) {?>
 					<div class="col-md-5">
-						<img src="<?php echo base_url(); ?>template/img/<?php echo $row->gambar;?>" class="pull-left img-responsive">
+						<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" class="pull-left img-responsive">
 					</div>
 
 					<div class="curr-sell-small">
-						<strong><?php echo $row->judul;?></strong>
+						<strong><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul;?></a></strong>
 						<p class="harga"> IDR <?php echo $row->harga;?> </p>
 						<?php if ($row->status == 'active'): ?>
 							<a href="#" class="btn btn-warning ">No Reserved </a>
@@ -70,7 +70,7 @@
 				  	<div class="active-ticket">
 				  		<div class="col-md-6 img-area">
 							<img src="<?php echo base_url(); ?>template/img/<?php echo $row->gambar;?>" width="120px" class="pull-left img-responsive" alt="No image">
-						            <strong><?php echo $row->judul;?></strong>
+						            <strong><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul;?></a></strong>
 						            <p class="harga">IDR <?php echo $row->harga;?></p>  
 							<div class="info-small">
 								<small>Tiket : <?php echo $row->tipe;?></small>
@@ -104,7 +104,7 @@
 							<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" class="pull-left img-responsive">
 						</div>
 						<div class="info-small">
-							<h5><?php echo $row->judul;?></h5>
+							<h5><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul;?></a></h5>
 							<small>IDR <?php echo $row->harga;?> sampingnya gk keliatan bos</small><br>
 							<?php if ($row->status == 'deactived'): ?>
 								<a href="#" class="btn btn-danger">deactived</a><small> *<?php echo $row->keterangan;?></small>

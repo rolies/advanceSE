@@ -17,6 +17,7 @@ class Welcome extends CI_Controller {
 		        'email' => $_POST['email'],
 		        'hp' => $_POST['hp'],
 		        'kota' => $_POST['kota'],
+		        'regdate' => date("Y")
 			);
 			$this->load->model('Sample_model');
 			if(!$this->Sample_model->add_user($user)){

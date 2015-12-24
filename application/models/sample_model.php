@@ -39,4 +39,14 @@ class Sample_model extends CI_model {
 		return $this->db->query($query);
 	}
 
+	public function read_for_detail($name, $number){
+		$query = $this->db->query("SELECT * FROM $name WHERE number=$number");
+    	return $query->row();
+	}
+
+	public function read_user_for_detail($name, $username){
+		$query = $this->db->query("SELECT * FROM $name WHERE username='$username'");
+    	return $query->row();
+	}
+
 }

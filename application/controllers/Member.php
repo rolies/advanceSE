@@ -2,9 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Member extends CI_Controller {
+
+	public $userlogin;
+
 	public function __construct(){
 		parent::__construct();
 		$this->validate_user();
+		$this->userlogin = $_SESSION['username'];
 	}
 
 	public function validate_user() {
@@ -17,12 +21,14 @@ class Member extends CI_Controller {
 	public function index() {
 		if (isset($_SESSION['is_logged_in']))
 		{
-			$data['name'] = $_SESSION['username'];
+			$this->load->helper('url');
+			$data['name'] = $this->userlogin;
 			$data['page_title'] = 'Member Dashboard';
 			$this->load->model('Sample_model');
-			$data['h'] = $this->Sample_model->read_active('sellpost', $_SESSION['username']);
-			$data['h_satu'] = $this->Sample_model->read_active_satu('sellpost', $_SESSION['username']);
-			$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost', $_SESSION['username']);
+			$data['h'] = $this->Sample_model->read_active('sellpost', $this->userlogin);
+			
+			$data['h_satu'] = $this->Sample_model->read_active_satu('sellpost', $this->userlogin);
+			$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost', $this->userlogin);
 	  		$this->load->view('member/user-header', $data);
 			$this->load->view('member/user-body', $data);
 			$this->load->view('include/footer');
@@ -75,10 +81,11 @@ class Member extends CI_Controller {
 		redirect('Welcome');
 	}
 
-	public function edit_profil(){
+	public function edit_profil($userlogin = "bla"){
 		if (isset($_SESSION['is_logged_in']))
 		{
-			$data['name'] = $_SESSION['username'];
+			$userlogin = $_SESSION['username'];
+			$data['name'] = $userlogin;
 			$data['page_title'] = 'Edit Profil - Dashboard';
 			$this->load->view('member/user-header', $data);
 			$this->load->view('member/edit-profil', $data);
