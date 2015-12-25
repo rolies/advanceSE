@@ -29,6 +29,7 @@ class Member extends CI_Controller {
 			$data['h_satu'] = $this->Sample_model->read_active_satu('sellpost', $_SESSION['username']);
 			$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost', $_SESSION['username']);
 			$data['h_reserved'] = $this->member_model->read_reserved('sellpost', $_SESSION['username']);
+			$data['h_reserved_satu'] = $this->member_model->read_reserved_satu('sellpost', $_SESSION['username']);
 	  		$this->load->view('member/user-header', $data);
 			$this->load->view('member/user-body', $data);
 			$this->load->view('include/footer');
@@ -91,5 +92,25 @@ class Member extends CI_Controller {
 			$this->load->view('member/edit-profil', $data);
 			$this->load->view('include/footer');
 		}
+	}
+	public function mark_sold(){
+		$sold =array(
+			'status' =>'sold'
+			);
+		$number = $this->input->post('nomerpost');
+		$this->load->model('member_model');
+		$this->member_model->update_sold($number, $sold);
+		redirect ('Member'."#sellpost");
+	}
+
+	public function cancel_reserve(){
+		$reserve =array(
+			'status' =>'active',
+			'keterangan' => $this->input->post('user_reserve'). " cancel reservation"
+			);
+		$number = $this->input->post('nomerpost');
+		$this->load->model('member_model');
+		$this->member_model->update_reserve($number, $reserve);
+		redirect ('Member');
 	}
 }

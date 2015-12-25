@@ -49,7 +49,7 @@ header {
 	color: #99A5B5;
 }
 .greeting p {
-	font-weight: 700;
+	font-family: 'montserratbold';
 	font-size: 22px;
 	margin-bottom: 4px;
 }
@@ -104,7 +104,7 @@ p .glyphicon-edit {
 	color: #FFF;
 	background-color: #707F94;
 	text-transform: uppercase;
-	font-weight: 400;
+	font-family: 'montserratregular';
 }
 .logout-link {
 	padding-bottom: 50px;
@@ -162,6 +162,19 @@ p .glyphicon-edit {
 	width: 100px;
 	border: none;
 	margin-top: 8px;
+}
+.reserve-area {
+	padding: 0;
+	margin:0;
+}
+.my-reserve .btn {
+	border-radius: 50px;
+	padding: 4px 8px;
+	width: 130px;
+	border: none;
+	font-family: 'montserratlight';
+	font-size: 12px;
+	margin-top: 0;
 }
 .curr-sell-small strong, .curr-res-small strong{
 	font-size: 18px;

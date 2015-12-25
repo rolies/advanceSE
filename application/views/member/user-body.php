@@ -42,15 +42,25 @@
 				<div class="ticket">
 					<h5> My Ticket Reservation</h5>
 				</div>
+				<div class="container-fluid">
 				<div class="row">
-					<div class="col-md-5 curr-res-small">
-						<h5> Trip ke Bromo </h5>
-						<p> IDR 120.000 </p>
-						<a href="#" class="btn btn-warning btn-sm">Cancel </a>
+				<?php if (!$h_reserved_satu): ?>
+					<p style="color: #8FB94B"><?php echo "Anda belum melakukan reservasi"; ?></p>
+					<?php else: ?>
+					<div class="col-md-6 curr-res-small reserve-area">
+						<h5> <?php echo "$h_reserved_satu->judul"; ?> </h5>
+						<p>Owner: <?php echo "$h_reserved_satu->user"; ?></p>
 					</div>
-					<div class="col-md-7">
-						<p> IDR 120.000 </p>
+					<div class="col-md-5 reserve-area">
+						<p>IDR <?php echo "$h_reserved_satu->harga"; ?></p>
+						<form action="<?php echo base_url(); ?>Member/cancel_reserve" method="POST">	
+							<input type="text" value="<?php echo $h_reserved_satu->keterangan?>" name="user_reserve" hidden>				
+							<input type="text" value="<?php echo $h_reserved_satu->number?>" name="nomerpost" hidden>
+							<button type="submit" class="btn btn-warning">Cancel Reservation</button>
+						</form>
 					</div>
+				<?php endif ?>
+				</div>
 				</div>
 			</div>
 		</div>
@@ -87,8 +97,11 @@
 							<p> <?php echo $row->alamat;?></p>
 						</div>
 						<div class="col-md-3">
-							<a href="#" class="btn btn-info"> Edit </a>
-							<a href="#" class="btn btn-link">mark sold</a>
+							<a href="#" class="btn btn-info"> Edit </a>	
+							<form action="<?php echo base_url(); ?>Member/mark_sold" method="POST">					
+								<input type="text" value="<?php echo $row->number?>" name="nomerpost" hidden>
+								<button type="submit" class="btn btn-link">mark sold</button>
+							</form>
 						</div>
 					</div>
 					<div class="line-white"></div>
@@ -125,7 +138,7 @@
 								if ($today > $date) { ?>
 									<div class="col-md-4">
 										<div class="reserved-area active">
-											<h5><a href="#">Tiket berlibur Bromo</a></h5>
+											<h5><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul; ?></a></h5>
 											<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" alt="ticket-reserve" class="img-responsive img-thumbnail">
 											<h5>Owner : <?php echo $row->user;?> <br><small><?php echo $row->harga;?></small></h5>
 										</div>
@@ -133,7 +146,7 @@
 								<?php } else{ ?>
 									<div class="col-md-4">
 										<div class="reserved-area">
-											<h5><a href="#">Tiket berlibur Bromo</a></h5>
+											<h5><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul; ?></a></h5>
 											<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" alt="ticket-reserve" class="img-responsive img-thumbnail">
 											<h5>Owner : <?php echo $row->user;?> <br><small><?php echo $row->harga;?></small></h5>
 										</div>
