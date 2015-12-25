@@ -243,3 +243,10 @@ p .glyphicon-edit {
 	box-shadow: none;
 	border-radius: 0;
 }
+/*This is edit post style*/
+.form-group .well {
+	background: #FFF;
+	border: none;
+	box-shadow: none;
+	padding-left: 0;
+}
