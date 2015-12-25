@@ -14,15 +14,23 @@ class Ticket extends CI_Controller {
 		$data['detail_ticket_user'] = $this->Sample_model->read_user_for_detail('users', $data['detail_ticket']->user);
 		$lid = $data['detail_ticket']->judul;
 		$url_title = url_title($lid);
-		if ($urldetail != $url_title) {
-			echo "Ticket you are looking not here";
-		}else {
+		
+		if (isset($_SESSION['is_logged_in']))
+		{
+			if ($urldetail != $url_title) {
+				echo "Ticket you are looking not here";
+			}else {
+				$data['page_title'] = "TicketSell - ".$lid;
+				$this->load->view('detail_header', $data);
+				$this->load->view('detail_ticket', $data);
+				$this->load->view('include/footer');
+			}
+		} else {
 			$data['page_title'] = "TicketSell - ".$lid;
 			$this->load->view('detail_header', $data);
 			$this->load->view('detail_ticket', $data);
 			$this->load->view('include/footer');
 		}
 	}
-
 
 }

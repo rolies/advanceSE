@@ -1,8 +1,37 @@
 header {
 	background: #2BD3D6;
 }
+.user-ticket p{
+	font-family: 'montserratbold'
+}
+.user-ticket .btn{
+	background: #ED4A43;
+	border: none;
+	border-radius: 0;
+}
+.default-ticket .btn{
+	width: 120px;
+	height: 45px;
+	border-radius: 0;
+	text-align: center;
+	padding-left: 0;
+	padding-right: 0;
+}
+.breadcumb-header {
+	margin-top: 100px;
+}
+.breadcumb-header .col-md-12{
+	margin-top: 30px;
+}
+.breadcrumb {
+	padding-top: 31px;
+	height: 80px;
+}
+.breadcrumb p {
+	margin-top: -13px;
+}
 .detail-main {
-	margin: 120px 0;
+	margin: 40px 0 170px 0;
 }
 .detail-deskrip {
 	padding-top: 72px;
