@@ -69,7 +69,7 @@
 				  	<?php  foreach ($h->result() as $row) {?>
 				  	<div class="active-ticket">
 				  		<div class="col-md-6 img-area">
-							<img src="<?php echo base_url(); ?>template/img/<?php echo $row->gambar;?>" width="120px" class="pull-left img-responsive" alt="No image">
+							<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" width="120px" class="pull-left img-responsive" alt="No image">
 						            <strong><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul;?></a></strong>
 						            <p class="harga">IDR <?php echo $row->harga;?></p>  
 							<div class="info-small">
@@ -115,16 +115,35 @@
 						<?php } ?>
 					</div>
 				</div>
+
 				<div class="tab-pane" id="allreserve">
 					<div class="row">
-						<div class="col-md-4">
-							<div class="reserved-area active">
-								<h5><a href="#">Tiket berlibur Bromo</a></h5>
-								<img src="./uploads/ticket/ticket1.jpg" alt="ticket-reserve" class="img-responsive img-thumbnail">
-								<h5>Owner : Brolin <br><small>IDR 200.000</small></h5>
-							</div>
-						</div>
-						<div class="col-md-4">
+						<?php if ($h_reserved->num_rows() > 0): ?>
+							<?php  foreach ($h_reserved->result() as $row) {?>
+							<?php $today = date("Y-m-d H:i:s");
+								$date = $row->tanggal;
+								if ($today > $date) { ?>
+									<div class="col-md-4">
+										<div class="reserved-area active">
+											<h5><a href="#">Tiket berlibur Bromo</a></h5>
+											<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" alt="ticket-reserve" class="img-responsive img-thumbnail">
+											<h5>Owner : <?php echo $row->user;?> <br><small><?php echo $row->harga;?></small></h5>
+										</div>
+									</div>
+								<?php } else{ ?>
+									<div class="col-md-4">
+										<div class="reserved-area">
+											<h5><a href="#">Tiket berlibur Bromo</a></h5>
+											<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar;?>" alt="ticket-reserve" class="img-responsive img-thumbnail">
+											<h5>Owner : <?php echo $row->user;?> <br><small><?php echo $row->harga;?></small></h5>
+										</div>
+									</div>
+								<?php } ?>
+							<?php } ?>
+						<?php else: ?>
+							<p style="margin-left: 15px; color: #8FB94B">Anda belum melakukan Reservasi</p>
+						<?php endif ?>
+					<!-- 	<div class="col-md-4">
 							<div class="reserved-area">
 								<h5><a href="#">Tiket pariwisata Bali</a></h5>
 								<img src="./uploads/ticket/ticket2.jpg" alt="ticket-reserve" class="img-responsive img-thumbnail">
@@ -137,7 +156,7 @@
 								<img src="./uploads/ticket/ticket1.jpg" alt="ticket-reserve" class="img-responsive img-thumbnail">
 								<h5>Owner : Brolin <br><small>IDR 200.000</small></h5>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="tab-pane  active" id="notifikasi">

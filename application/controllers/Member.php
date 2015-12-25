@@ -24,10 +24,11 @@ class Member extends CI_Controller {
 			$data['name'] = $_SESSION['username'];
 			$data['page_title'] = 'Member Dashboard';
 			$this->load->model('Sample_model');
-			$data['h'] = $this->Sample_model->read_active('sellpost', $_SESSION['username']);
-			
+			$this->load->model('member_model');
+			$data['h'] = $this->Sample_model->read_active('sellpost', $_SESSION['username']);			
 			$data['h_satu'] = $this->Sample_model->read_active_satu('sellpost', $_SESSION['username']);
 			$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost', $_SESSION['username']);
+			$data['h_reserved'] = $this->member_model->read_reserved('sellpost', $_SESSION['username']);
 	  		$this->load->view('member/user-header', $data);
 			$this->load->view('member/user-body', $data);
 			$this->load->view('include/footer');
