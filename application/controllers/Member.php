@@ -1,3 +1,4 @@
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -31,6 +32,7 @@ class Member extends CI_Controller {
 			$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost', $_SESSION['username']);
 			$data['h_reserved'] = $this->member_model->read_reserved('sellpost', $_SESSION['username']);
 			$data['h_reserved_satu'] = $this->member_model->read_reserved_satu('sellpost', $_SESSION['username']);
+			$data['h_all_post'] = $this->member_model->read_all_post('sellpost', $_SESSION['username']);
 			$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
 	  		$this->load->view('member/user-header', $data);
 			$this->load->view('member/user-body', $data);

@@ -7,6 +7,11 @@ class member_model extends CI_model {
 		parent::__construct();
 	}
 
+	public function read_all_post($name, $username){
+		$query = "SELECT * FROM $name WHERE user='$username'";
+		return $this->db->query($query);
+	}
+	
 	public function read_reserved($name, $username){
 		$query = "SELECT * FROM $name WHERE status='reserved' AND keterangan='$username'";
 		return $this->db->query($query);

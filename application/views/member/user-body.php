@@ -173,7 +173,29 @@
 					</div>
 				</div>
 				<div class="tab-pane  active" id="notifikasi">
-					<p>Brolin reserve ticket (judul ticket)	</p>
+
+				<?php  foreach ($h_all_post->result() as $row) {?>
+				<?php if ($row->status == 'deactived'): ?>
+					<p class="deactived"><?php echo $row->keterangan ?> >>
+					<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>">lihat ke post</a>
+					</p>
+				<?php endif ?>
+
+				<?php if ($row->status == 'reserved'): ?>
+					<p class="reserved"><?php echo $row->keterangan ?> reserve ticket Anda >>
+					<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>">lihat ke post</a>
+					</p>
+				<?php endif ?>
+				<?php } ?>
+				
+				<hr>
+				<h3>Tiket Terjual</h3>
+				<?php  foreach ($h_all_post->result() as $row) {?>
+				<?php if ($row->status == 'sold'): ?>
+					<p class="reserved"><?php echo $row->judul ?></p>
+				<?php endif ?>
+
+				<?php } ?>
 				</div>
 			</div>
 		</div>
@@ -185,6 +207,3 @@
 })
 </script>
 <!-- http://www.formget.com/codeigniter-upload-image/ -->
-
-
-
