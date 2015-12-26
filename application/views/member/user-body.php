@@ -3,7 +3,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-4 member-area">
-			<img src="<?php echo base_url(); ?>template/img/user.jpg" width="80px" class="pull-left">
+			<img src="<?php echo base_url(); ?>uploads/users/<?php echo $h_img->gambar; ?>" width="80px" class="pull-left">
 			<div class="greeting">
 				<small>Welcome Back</small>
 				<p><?php echo $name; ?> <a href="<?php echo base_url();?>Member/edit_profil" data-toggle="tooltip" data-placement="right" title="Edit Profil"><span class="glyphicon glyphicon-edit"></span></a></p>

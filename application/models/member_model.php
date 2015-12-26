@@ -15,7 +15,10 @@ class member_model extends CI_model {
 		$query = $this->db->query("SELECT * FROM $name WHERE status='reserved' AND keterangan='$username'");
     	return $query->row();
 	}
-
+	public function read_img($username){
+		$query = $this->db->query("SELECT * FROM users WHERE username='$username'");
+		return $query->row();
+    }
 	public function update_sold($id, $sold){
 		$this->db->where('number', $id);
 		return $this->db->update('sellpost', $sold);
@@ -33,5 +36,9 @@ class member_model extends CI_model {
     public function update_post($number, $edit){
 		$this->db->where('number', $number);
 		return $this->db->update('sellpost', $edit);
+    }
+    public function update_member($edit, $username){
+		$this->db->where('username', $username);
+		return $this->db->update('users', $edit);
     }
 }

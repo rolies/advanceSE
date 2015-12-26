@@ -14,7 +14,7 @@
 		</div>
 		<div class="col-md-8 edit-prof">
 			<div class="col-md-6 edit-hp">
-				<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
+				<form action="<?php echo base_url();?>Member/editmember" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 				<div class="form-group">
 					<label for="inputhrg" class="col-sm-2 control-label">Hp</label>
 					<div class="col-sm-10">
@@ -52,12 +52,12 @@
 							<input type="password" class="form-control" id="inputnewpass" name="new-pass">
 						</div>
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="inputkota" class="col-sm-4 control-label">Re-type</label>
 						<div class="col-sm-8">
 							<input type="password" class="form-control" id="inputretype" name="re-pass">
 						</div>
-					</div>
+					</div> -->
 
 				  	<hr>
 				    <button class="btn btn-default btn-lg">Update</button>

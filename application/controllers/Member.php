@@ -22,6 +22,7 @@ class Member extends CI_Controller {
 		{
 			$this->load->helper('url');
 			$data['name'] = $_SESSION['username'];
+
 			$data['page_title'] = 'Member Dashboard';
 			$this->load->model('Sample_model');
 			$this->load->model('member_model');
@@ -30,6 +31,7 @@ class Member extends CI_Controller {
 			$data['h_deactived'] = $this->Sample_model->read_deactived('sellpost', $_SESSION['username']);
 			$data['h_reserved'] = $this->member_model->read_reserved('sellpost', $_SESSION['username']);
 			$data['h_reserved_satu'] = $this->member_model->read_reserved_satu('sellpost', $_SESSION['username']);
+			$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
 	  		$this->load->view('member/user-header', $data);
 			$this->load->view('member/user-body', $data);
 			$this->load->view('include/footer');
@@ -156,6 +158,31 @@ class Member extends CI_Controller {
 				$this->load->view('member/edit-post');
 				$this->load->view('include/footer');
 			} 
+		} 
+	}
+
+
+	public function editmember() {
+		if (isset($_SESSION['is_logged_in']))
+		{
+			$userlogin = $_SESSION['username'];
+			$data['name'] = $userlogin;
+			$config['upload_path']          = './uploads/users';
+	        $config['allowed_types']        = 'gif|jpg|png';
+			$data['page_title'] = 'Edit Member - Dashboard';
+
+			$this->load->library('upload', $config);
+			$this->upload->do_upload('gambar-profil');
+			
+			$edit = array (
+				'hp' => $_POST['hp'],
+				'kota' => $_POST['kota'],
+				'gambar' => $this->upload->data('file_name')
+			);
+			
+			$this->load->model('member_model');
+			$this->member_model->update_Member($edit, $userlogin);
+			redirect ('Member');
 		} 
 	}
 
