@@ -14,9 +14,7 @@ class Sample_model extends CI_model {
 	}
 
 	public function check_user($credentials) {
-		
 		$this->db->where($credentials);
-
 		return  $this->db->get('users');
 	}
 

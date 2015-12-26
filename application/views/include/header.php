@@ -62,7 +62,7 @@
 	        <div class="modal-dialog">
 	            <div class="modal-content">
 	                <div class="modal-body text-center">
-	                    <form action=" " role="form" method="POST" class="form-horizontal">
+	                    <form action="<?php echo base_url(); ?>Welcome/register" role="form" method="POST" class="form-horizontal">
 	                    	<div class="form-group">
 							    <label for="inputusername" class="col-sm-5 control-label">Username</label>
 							    <div class="col-sm-7">

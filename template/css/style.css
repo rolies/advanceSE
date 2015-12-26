@@ -69,14 +69,20 @@ body {
 	margin-right: 60px;
 }
 .hero-text h1 {
+	font-family: 'Montserratblack';
+	font-size: 38px;
+}
+.hero-text p:nth-child(even){
 	font-family: 'Montserratbold';
 }
 .hero-text p {
-	font-size: 21px;	
+	font-size: 21px;
+	font-family: 'Montserratlight';
 }
 .cari {
 	padding-top: 30px;
 	clear: both;
+	font-family: 'Montserrathairline';
 }
 section {
 	margin-top: -120px;
@@ -106,19 +112,39 @@ section {
 	border: none;
 }
 /*----------- Hero ends ---------------*/
+.tick { 
+	background: #72B7F8;
+	-webkit-box-shadow: -5px -7px 6px -4px rgba(85,85,85,0.74);
+-moz-box-shadow: -5px -7px 6px -4px rgba(85,85,85,0.74);
+box-shadow: -5px -7px 6px -4px rgba(85,85,85,0.74);
+}
 .ticket-home {
 	color: #FFF;
-	padding: 0 10%;
+	margin: 0 90px;
+}
+.ticket-home .col-md-1 {
+	background: #64A4E4;
+	vertical-align: middle;
+	padding: 5.2% 0 4% 0;
+	width: 8.3%;
+}
+.ticket-home .col-md-10 {
+	padding: 2% 6%;
 	background: #72B7F8;
-	-webkit-box-shadow: -1px -3px 7px 1px rgba(35,31,32,0.62);
-	-moz-box-shadow: -1px -3px 7px 1px rgba(35,31,32,0.62);
-	box-shadow: -1px -3px 7px 1px rgba(35,31,32,0.62);
+}
+.ticket-home .col-md-1 a {
+	font-size: 38px;
+	margin-left: 25px;
+	color: #FFF;
 }
 .ticket-home .btn {
 	background: #64A4E4;
 	border: #64A4E4;
 	box-shadow: none;
+	padding: 20px 20px;
 	margin-top: 1.5em;
+	font-family: 'Montserratregular';
+	font-size: 18px;
 }
 .promote {
 	margin-bottom: 165px;

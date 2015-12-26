@@ -13,12 +13,12 @@ class Ticket extends CI_Controller {
 		$this->load->model('member_model');
 		$data['detail_ticket'] = $this->Sample_model->read_for_detail('sellpost', $id);
 		$data['detail_ticket_user'] = $this->Sample_model->read_user_for_detail('users', $data['detail_ticket']->user);
-		$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
 		$lid = $data['detail_ticket']->judul;
 		$url_title = url_title($lid);
 		
 		if (isset($_SESSION['is_logged_in']))
 		{
+			$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
 			if ($urldetail != $url_title) {
 				echo "Ticket you are looking not here";
 			}else {

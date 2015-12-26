@@ -5,7 +5,7 @@
 				<div class="hero-text">
 					<h1>NO MORE WASTE ... </h1>
 					<p>Tidak dapat menghadiri acara darti ticket yang anda beli ?  </p>
-					<p> Pajang saja di web kami. jutaan orang yang membutuhkan diluar sana 
+					<p> Posting saja di web kami. jutaan orang yang membutuhkan diluar sana 
 					akan mudah untuk menemukannya </p>
 				</div>
 				<a href="#" class="btn btn-info btn-lg">CARA KERJA </a>
@@ -21,14 +21,53 @@
 		</div> 
 	</div>
 </section>
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12 ticket-home">
-			<div class="pull-left">
-				<h2>Bon Jovi Live in Jakarta <small>20 ticket posted </small></h2>
-				<p>20 September 2016</p>
+<div class="container-fluid tick">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="row ticket-home">
+			<div class="col-md-1">
+				<a href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
 			</div>
-			<a href="#" class="btn btn-info pull-right">Selengkapnya</a>
+
+			<?php  foreach ($h_max->result_array() as $row) {?>
+			<?php $numb = array($row['number']);?>
+			<?php } 
+			$numbe = max($numb)
+			?>
+
+
+			<div class="col-md-10">
+				<div class="carousel-inner" role="listbox">
+			<?php  foreach ($h_all->result() as $row) {?>
+			<?php if ($numbe == $row->number ): ?>
+						<div class="item active">
+							<div class="pull-left">
+								<h2><?php echo $row->judul ?><small> IDR: <?php echo $row->harga ?></small></h2>
+								<p><?php echo $row->tanggal ?></p>
+							</div>
+							<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>" class="btn btn-info pull-right">Selengkapnya</a>
+						</div>
+				<?php else: ?>
+
+							<div class="item">
+								<div class="pull-left">
+									<h2><?php echo $row->judul ?><small> IDR: <?php echo $row->harga ?></small></h2>
+									<p><?php echo $row->tanggal ?></p>
+								</div>
+								<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>" class="btn btn-info pull-right">Selengkapnya</a>
+							</div>
+			<?php endif ?>
+				<?php } ?>
+				</div>
+			</div>
+			<div class="col-md-1">
+				<a href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				  	<span class="sr-only">Next</span>
+				</a>
+			</div> 
 		</div>
 	</div>
 </div>
@@ -55,20 +94,8 @@
 		</div>
 	</div>
 </div>
-<!-- <div class="container main-view">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div> -->
+<script>
+		$('.carousel').carousel({
+    interval: false
+}); 
+	</script>
