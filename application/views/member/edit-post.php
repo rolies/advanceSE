@@ -72,7 +72,7 @@
 					<div class="col-sm-10">
 					   	<input type="file" id="inputgambar" name="gambar-ticket">
 					   	<div id="credits" class="well">
-					   		<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $display->gambar; ?>" alt="gambar" class="col-md-3">
+					   		<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $display->gambar; ?>" alt="belum gambar" class="col-md-3">
 							<a href="#credits" class="toggle"><span class="glyphicon glyphicon-remove"></a>
 					   	</div>
 					</div>

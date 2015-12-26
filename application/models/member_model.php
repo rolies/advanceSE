@@ -29,4 +29,9 @@ class member_model extends CI_model {
 		$query = $this->db->query("SELECT * FROM $name WHERE number='$id'");
 		return $query->row();
     }
+
+    public function update_post($number, $edit){
+		$this->db->where('number', $number);
+		return $this->db->update('sellpost', $edit);
+    }
 }

@@ -97,7 +97,7 @@
 							<p> <?php echo $row->alamat;?></p>
 						</div>
 						<div class="col-md-3">
-							<a href="<?php echo base_url() ?>Member/editpost" class="btn btn-info"> Edit </a>	
+							<a href="<?php echo base_url() ?>Member/editpost/<?php echo $row->number; ?>" class="btn btn-info"> Edit </a>	
 							<form action="<?php echo base_url(); ?>Member/mark_sold" method="POST">					
 								<input type="text" value="<?php echo $row->number?>" name="nomerpost" hidden>
 								<button type="submit" class="btn btn-link">mark sold</button>

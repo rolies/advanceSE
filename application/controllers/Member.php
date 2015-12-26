@@ -114,42 +114,42 @@ class Member extends CI_Controller {
 		redirect ('Member');
 	}
 
-	public function editpost() {
+	public function editpost($number) {
 		if (isset($_SESSION['is_logged_in']))
 		{
 
 			$userlogin = $_SESSION['username'];
 			$data['name'] = $userlogin;
-			// $config['upload_path']          = './uploads/ticket';
-	  //       $config['allowed_types']        = 'gif|jpg|png';
-	  //       $config['max_size']             = 100;
-	  //       $config['max_width']            = 1024;
-	  //       $config['max_height']           = 768;
+			$config['upload_path']          = './uploads/ticket';
+	        $config['allowed_types']        = 'gif|jpg|png';
+	        $config['max_size']             = 100;
+	        $config['max_width']            = 1024;
+	        $config['max_height']           = 768;
 			$this->load->model('member_model');
-			$data['display'] =$this->member_model->select_for_update('sellpost', 7);
+			$data['display'] =$this->member_model->select_for_update('sellpost', $number);
 			$data['page_title'] = 'Edit post - Dashboard';
 			if (isset($_POST['tipe'])){
-				// $this->load->library('upload', $config);
-	   //          $this->upload->do_upload('gambar-ticket');
+				$this->load->library('upload', $config);
+	            $this->upload->do_upload('gambar-ticket');
 
-				// $post = array (
-				// 	'tipe' => $_POST['tipe'],
-				// 	'judul' => $_POST['judul'],
-				// 	'tanggal' => $_POST['tanggal'],
-				// 	'harga' => $_POST['harga'],
-				// 	'alamat' => $_POST['alamat'],
-				// 	'deskripsi' => $_POST['deskripsi'],
-				// 	'gambar' => $this->upload->data('file_name'),
-				// 	'status' =>'active',
+				$edit = array (
+					'tipe' => $_POST['tipe'],
+					'judul' => $_POST['judul'],
+					'tanggal' => $_POST['tanggal'],
+					'harga' => $_POST['harga'],
+					'alamat' => $_POST['alamat'],
+					'deskripsi' => $_POST['deskripsi'],
+					'gambar' => $this->upload->data('file_name'),
+					'status' =>'active',
 
-				// );
+				);
 				
-				// $this->load->model('Sample_model');
-				// if(!$this->Sample_model->add_sellpost($post)){
-				// 	die('Something Wrong');
-				// } else {
-				// 	echo "Post sukses bro";
-				// }
+				$this->load->model('member_model');
+				if(!$this->member_model->update_post($number, $edit)){
+					die('Something Wrong');
+				} else {
+					redirect ('Member');
+				}
 			} else {
 				$this->load->helper('form');
 				$this->load->view('member/user-header', $data);
