@@ -11,15 +11,16 @@ class member_model extends CI_model {
 		$query = "SELECT * FROM $name WHERE user='$username'";
 		return $this->db->query($query);
 	}
-	
+
 	public function read_reserved($name, $username){
 		$query = "SELECT * FROM $name WHERE status='reserved' AND keterangan='$username'";
 		return $this->db->query($query);
 	}
 	public function read_reserved_satu($name, $username){
-		$query = $this->db->query("SELECT * FROM $name WHERE status='reserved' AND keterangan='$username'");
-    	return $query->row();
+		$query = "SELECT * FROM $name WHERE status='reserved' AND keterangan='$username' LIMIT 2";
+		return $this->db->query($query);
 	}
+
 	public function read_img($username){
 		$query = $this->db->query("SELECT * FROM users WHERE username='$username'");
 		return $query->row();

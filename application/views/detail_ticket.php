@@ -33,6 +33,15 @@
 			<img width="100%" src="<?php echo base_url(); ?>uploads/ticket/<?php echo "$detail_ticket->gambar"; ?>" alt="Gambar Ticket detail">
 		</div>
 		<div class="col-md-5 detail-deskrip">
+			<?php $today = date("Y-m-d H:i:s");
+			$date = $detail_ticket->tanggal; ?>
+			<?php if ($today > $date) : ?>
+				<div class="warn">
+					<h6><span class="glyphicon glyphicon-ban-circle"></span> Ticket sudah tidak berlaku</h6>
+				</div>
+			<?php else: ?>
+				
+			<?php endif ?>
 			<h3>IDR <?php echo "$detail_ticket->harga"; ?></h3>
 			<img src="<?php echo base_url(); ?>uploads/users/<?php echo $detail_ticket_user->gambar; ?>" alt="User img not found" width="23%" class="pull-left">
 			<strong><?php echo "$detail_ticket->user"; ?></strong>

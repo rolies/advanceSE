@@ -47,24 +47,26 @@
 				<?php if (!$h_reserved_satu): ?>
 					<p style="color: #8FB94B"><?php echo "Anda belum melakukan reservasi"; ?></p>
 				<?php else: ?>
+					<?php  foreach ($h_reserved_satu->result() as $row) {?>
 					<?php $today = date("Y-m-d H:i:s");
-					$date = $h_reserved_satu->tanggal; ?>
+					$date = $row->tanggal; ?>
 					<?php if ($today < $date) : ?>
 						<div class="col-md-6 curr-res-small reserve-area">
-							<h5> <?php echo "$h_reserved_satu->judul"; ?> </h5>
-							<p>Owner: <?php echo "$h_reserved_satu->user"; ?></p>
+							<h5> <?php echo "$row->judul"; ?> </h5>
+							<p>Owner: <?php echo "$row->user"; ?></p>
 						</div>
 						<div class="col-md-5 reserve-area">
-							<p>IDR <?php echo "$h_reserved_satu->harga"; ?></p>
+							<p>IDR <?php echo "$row->harga"; ?></p>
 							<form action="<?php echo base_url(); ?>Member/cancel_reserve" method="POST">	
-								<input type="text" value="<?php echo $h_reserved_satu->keterangan?>" name="user_reserve" hidden>				
-								<input type="text" value="<?php echo $h_reserved_satu->number?>" name="nomerpost" hidden>
+								<input type="text" value="<?php echo $row->keterangan?>" name="user_reserve" hidden>				
+								<input type="text" value="<?php echo $row->number?>" name="nomerpost" hidden>
 								<button type="submit" class="btn btn-warning">Cancel Reservation</button>
 							</form>
 						</div>
 					<?php else: ?>
-						<p style="color: #8FB94B"><?php echo "Tidak ada reservasi untuk waktu mendatang"; ?></p>
+						
 					<?php endif ?>
+					<?php } ?>
 				<?php endif ?>
 				</div>
 				</div>

@@ -77,3 +77,10 @@ p.deskripsi::first-line{
 	font-size: 16px;
 	text-transform: uppercase;
 }
+.warn {
+	color: #FE2020;
+	background: #FFEE75;
+	padding: 1px 8px;
+	width: 220px;
+	margin-top: 30px;
+}
