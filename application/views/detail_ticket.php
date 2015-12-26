@@ -3,13 +3,13 @@
 	<div class="row breadcumb-header">
     <?php if (isset($_SESSION['is_logged_in'])): ?>
 		<div class="col-md-4 user-ticket">
-		<img src="<?php echo base_url(); ?>template/img/user1.jpg" alt="" class="pull-left col-md-4">
-		<p><?php echo "$detail_ticket->user"; ?></p>
+		<img src="<?php echo base_url(); ?>uploads/users/<?php echo $h_img->gambar; ?>" alt="" class="pull-left col-md-4">
+		<p><?php echo $_SESSION['username']; ?></p>
 		<a href="<?php echo base_url(); ?>Member" class="btn btn-danger">Dashboard</a>
 		</div>
     	<?php else: ?>
     		<div class="col-md-3 default-ticket">
-			<img src="<?php echo base_url(); ?>template/img/user.jpg" alt="" class="pull-left col-md-5">
+			<img src="<?php echo base_url(); ?>uploads/users/default.jpg" alt="" class="pull-left col-md-5">
 			<a href="<?php echo base_url(); ?>Member" class="btn btn-success">Login</a>
 			<a href="<?php echo base_url(); ?>Member" class="btn btn-link">Register</a>
 			</div>
@@ -34,7 +34,7 @@
 		</div>
 		<div class="col-md-5 detail-deskrip">
 			<h3>IDR <?php echo "$detail_ticket->harga"; ?></h3>
-			<img src="<?php echo base_url(); ?>template/img/user1.jpg" alt="User img not found" width="23%" class="pull-left">
+			<img src="<?php echo base_url(); ?>uploads/users/<?php echo $detail_ticket_user->gambar; ?>" alt="User img not found" width="23%" class="pull-left">
 			<strong><?php echo "$detail_ticket->user"; ?></strong>
 			<small>Member sejak : <?php echo "$detail_ticket_user->regdate"; ?></small>
 			<p class="nohp"><?php echo "$detail_ticket_user->hp"; ?><span class="pull-right">Perlihatkan</span></p>

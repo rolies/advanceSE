@@ -10,8 +10,10 @@ class Ticket extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->helper('text');
 		$this->load->model('Sample_model');
+		$this->load->model('member_model');
 		$data['detail_ticket'] = $this->Sample_model->read_for_detail('sellpost', $id);
 		$data['detail_ticket_user'] = $this->Sample_model->read_user_for_detail('users', $data['detail_ticket']->user);
+		$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
 		$lid = $data['detail_ticket']->judul;
 		$url_title = url_title($lid);
 		
@@ -33,4 +35,10 @@ class Ticket extends CI_Controller {
 		}
 	}
 
+	public function category() {
+			$data['page_title'] = "TicketSell - Category";
+			$this->load->view('detail_header', $data);
+			$this->load->view('category_view');
+			$this->load->view('include/footer');
+		}
 }
