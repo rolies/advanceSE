@@ -49,23 +49,30 @@
 			<p class="nohp"><?php echo "$detail_ticket_user->hp"; ?><span class="pull-right">Perlihatkan</span></p>
 			<p class="deskripsi"><?php echo "$detail_ticket->deskripsi"; ?></p>
 			
-			<?php if ($detail_ticket->status == 'active'): ?>
+			
+			<?php if ($today > $date) : ?>
+				
+			<?php else: ?>
+				
+				<?php if ($detail_ticket->status == 'active'): ?>
 				<form action="<?php echo base_url();?>Ticket/mark_reserved/<?php echo $detail_ticket->number; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
 					<button type="submit" class="btn btn-info">Reserve</button>
 				</form>
-			<?php endif ?>
+				<?php endif ?>
 
-			<?php if ($detail_ticket->status == 'reserved'): ?>
-				<button type="submit" class="btn btn-warning disabled">Reserved</button><small>Reserved by: <?php echo $detail_ticket->keterangan; ?></small>
-			<?php endif ?>
+				<?php if ($detail_ticket->status == 'reserved'): ?>
+					<button type="submit" class="btn btn-warning disabled">Reserved</button><small>Reserved by: <?php echo $detail_ticket->keterangan; ?></small>
+				<?php endif ?>
 
-			<?php if ($detail_ticket->status == 'deactived'): ?>
-				<button type="submit" class="btn btn-danger disabled">Deactived</button><small><?php echo $detail_ticket->keterangan; ?></small>
-			<?php endif ?>
+				<?php if ($detail_ticket->status == 'deactived'): ?>
+					<button type="submit" class="btn btn-danger disabled">Deactived</button><small><?php echo $detail_ticket->keterangan; ?></small>
+				<?php endif ?>
 
-			<?php if ($detail_ticket->status == 'sold'): ?>
-				<h3>Tiket Sudah Terjual</h3>
+				<?php if ($detail_ticket->status == 'sold'): ?>
+					<h3>Tiket Sudah Terjual</h3>
+				<?php endif ?>
 			<?php endif ?>
+	
 		</div>
 	</div>
 </div>
