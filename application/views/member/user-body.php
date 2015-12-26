@@ -46,19 +46,25 @@
 				<div class="row">
 				<?php if (!$h_reserved_satu): ?>
 					<p style="color: #8FB94B"><?php echo "Anda belum melakukan reservasi"; ?></p>
+				<?php else: ?>
+					<?php $today = date("Y-m-d H:i:s");
+					$date = $h_reserved_satu->tanggal; ?>
+					<?php if ($today < $date) : ?>
+						<div class="col-md-6 curr-res-small reserve-area">
+							<h5> <?php echo "$h_reserved_satu->judul"; ?> </h5>
+							<p>Owner: <?php echo "$h_reserved_satu->user"; ?></p>
+						</div>
+						<div class="col-md-5 reserve-area">
+							<p>IDR <?php echo "$h_reserved_satu->harga"; ?></p>
+							<form action="<?php echo base_url(); ?>Member/cancel_reserve" method="POST">	
+								<input type="text" value="<?php echo $h_reserved_satu->keterangan?>" name="user_reserve" hidden>				
+								<input type="text" value="<?php echo $h_reserved_satu->number?>" name="nomerpost" hidden>
+								<button type="submit" class="btn btn-warning">Cancel Reservation</button>
+							</form>
+						</div>
 					<?php else: ?>
-					<div class="col-md-6 curr-res-small reserve-area">
-						<h5> <?php echo "$h_reserved_satu->judul"; ?> </h5>
-						<p>Owner: <?php echo "$h_reserved_satu->user"; ?></p>
-					</div>
-					<div class="col-md-5 reserve-area">
-						<p>IDR <?php echo "$h_reserved_satu->harga"; ?></p>
-						<form action="<?php echo base_url(); ?>Member/cancel_reserve" method="POST">	
-							<input type="text" value="<?php echo $h_reserved_satu->keterangan?>" name="user_reserve" hidden>				
-							<input type="text" value="<?php echo $h_reserved_satu->number?>" name="nomerpost" hidden>
-							<button type="submit" class="btn btn-warning">Cancel Reservation</button>
-						</form>
-					</div>
+						<p style="color: #8FB94B"><?php echo "Tidak ada reservasi untuk waktu mendatang"; ?></p>
+					<?php endif ?>
 				<?php endif ?>
 				</div>
 				</div>
@@ -177,24 +183,15 @@
 				<?php  foreach ($h_all_post->result() as $row) {?>
 				<?php if ($row->status == 'deactived'): ?>
 					<p class="deactived"><?php echo $row->keterangan ?> >>
-					<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>">lihat ke post</a>
+					<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>">lihat post</a>
 					</p>
 				<?php endif ?>
 
 				<?php if ($row->status == 'reserved'): ?>
 					<p class="reserved"><?php echo $row->keterangan ?> reserve ticket Anda >>
-					<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>">lihat ke post</a>
+					<a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>">lihat post</a>
 					</p>
 				<?php endif ?>
-				<?php } ?>
-				
-				<hr>
-				<h3>Tiket Terjual</h3>
-				<?php  foreach ($h_all_post->result() as $row) {?>
-				<?php if ($row->status == 'sold'): ?>
-					<p class="reserved"><?php echo $row->judul ?></p>
-				<?php endif ?>
-
 				<?php } ?>
 				</div>
 			</div>
