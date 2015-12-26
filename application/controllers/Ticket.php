@@ -41,4 +41,18 @@ class Ticket extends CI_Controller {
 			$this->load->view('category_view');
 			$this->load->view('include/footer');
 		}
+
+	public function mark_reserved($id){
+		if (isset($_SESSION['is_logged_in']))
+		{
+			$name = $_SESSION['username'];
+			$reserve =array(
+				'status' => 'reserved',
+				'keterangan' => $name
+				);
+			$this->load->model('member_model');
+			$this->member_model->update_reserve($id, $reserve);
+			redirect ('Member');
+		}
+	}
 }

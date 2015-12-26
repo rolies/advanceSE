@@ -135,7 +135,7 @@
 							<?php  foreach ($h_reserved->result() as $row) {?>
 							<?php $today = date("Y-m-d H:i:s");
 								$date = $row->tanggal;
-								if ($today > $date) { ?>
+								if ($today < $date) { ?>
 									<div class="col-md-4">
 										<div class="reserved-area active">
 											<h5><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul; ?></a></h5>

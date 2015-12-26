@@ -39,7 +39,14 @@
 			<small>Member sejak : <?php echo "$detail_ticket_user->regdate"; ?></small>
 			<p class="nohp"><?php echo "$detail_ticket_user->hp"; ?><span class="pull-right">Perlihatkan</span></p>
 			<p class="deskripsi"><?php echo "$detail_ticket->deskripsi"; ?></p>
-			<a href="" class="btn btn-info">Reserve</a>
+			
+			<?php if ($detail_ticket->status == 'active'): ?>
+				<form action="<?php echo base_url();?>Ticket/mark_reserved/<?php echo $detail_ticket->number; ?>" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+					<button type="submit" class="btn btn-info">Reverse</button>
+				</form>
+				<?php else: ?>
+					<button type="submit" class="btn btn-warning disabled">Reverse</button><small>Reserved by: <?php echo $detail_ticket->keterangan; ?></small>
+			<?php endif ?>
 		</div>
 	</div>
 </div>
