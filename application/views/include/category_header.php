@@ -30,7 +30,7 @@
 								<div class="pull-right">
 									<small>welcome Back</small>
 									<p><?php echo $nameuser ?></p>
-									<a href="<?php echo base_url() ?>Member/sellpost"class="btn btn-info">SELL</a>
+									<a href="<?php echo base_url() ?>Member/sellpost" class="btn btn-info">SELL</a>
 								</div>
 							</div>
 							<div class="col-sm-2">

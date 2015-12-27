@@ -9,18 +9,24 @@
 	<div class="row">
 		<div class="col-md-3 col-md-offset-4 tampilan">
 			<p class="pull-left">Tampilan</p>
-			<span class="glyphicon glyphicon-th-list"></span>
-			<span class="glyphicon glyphicon-th"></span>
+			<ul class="nav nav-pills">
+				<li><a href="#post-list" data-toggle="pill"><span class="glyphicon glyphicon-th-list"></span></a></li>
+				<li class="active"><a href="#post-tile" data-toggle="pill"><span class="glyphicon glyphicon-th"></span></a></li>
+			</ul>
 		</div>
 		<div class="col-md-4 col-md-offset-1">
 			<div class="form-group">
 					<label for="inputtipe" class="col-sm-3 control-label">Urutkan</label>
 					<div class="col-sm-9">
-					   	<select class="form-control" id="inputtipe" name="tipe" >
-					  		<option value="Perjalanan">Terbaru</option>
-						  	<option value="Pariwisata">Terlama</option>
-						</select>
+						<form action="" method="post">
+						   	<select class="form-control" id="inputtipe" name="listfilter" onchange="buildQuery(this,this.form.type)">
+						  		<option value="ASC">acara terbaru</option>
+							  	<option value="DESC">acara terlama</option>
+							</select>
+							<button type="submit">get</button>
+						</form>
 					</div>
+
 				</div>
 		</div>
 	</div>
@@ -31,18 +37,23 @@
 		<div class="col-md-12">
 			<p>SEMARANG</p>
 		</div>
-			<div class="col-md-3 tick-area-first">
-				<img src="<?php echo base_url(); ?>uploads/ticket/ticket1.jpg" alt="" class="img-responsive">
-				<div class="judul-area">
-					<p>Tiket ke Dufan</p>
-					<small>IDR 120000</small>
+		<div class="tab-content">
+			<div class="tab-pane active" id="post-tile">
+			<?php  foreach ($h_categ->result() as $row) {?>
+				<div class="col-md-3 tick-area-first">
+					<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar ?>" alt="" class="img-responsive">
+					<div class="judul-area">
+						<p><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo substr($row->judul, 0, 14); ?></a></p>
+						<small>IDR <?php echo $row->harga ?></small>
+					</div>
+					<div class="waktu-area">
+						<p><span class="glyphicon glyphicon-time"></span> <?php echo $row->tanggal ?></p>
+						<small><span class="glyphicon glyphicon-map-marker"></span> <?php echo $row->alamat ?></small>
+					</div>
 				</div>
-				<div class="waktu-area">
-					<p><span class="glyphicon glyphicon-time"></span> 12/27/2016 09</p>
-					<small><span class="glyphicon glyphicon-map-marker"></span> Malang</small>
-				</div>
+			<?php } ?>
 			</div>
-			<div class="col-md-3 tick-area">
+			<!-- <div class="col-md-3 tick-area">
 				<img src="<?php echo base_url(); ?>uploads/ticket/ticket4.jpg" alt="" class="img-responsive">
 				<div class="judul-area">
 					<p>Tiket ke Dufan</p>
@@ -52,28 +63,52 @@
 					<p><span class="glyphicon glyphicon-time"></span> 12/27/2016 09</p>
 					<small><span class="glyphicon glyphicon-map-marker"></span> Malang</small>
 				</div>
+			</div> -->
+
+			<div class="tab-pane" id="post-list">
+			<div class="col-md-12">
+			<?php  foreach ($h_categ->result() as $row) {?>
+				<div class="ticket-post-list">
+					<div class="col-md-4">
+						<img src="<?php echo base_url(); ?>uploads/ticket/<?php echo $row->gambar ?>" alt="" class="img-responsive img-thumbnail">
+					</div>
+					<div class="col-md-7">
+						<div class="judul-area-list">
+							<h3><a href="<?php echo base_url(); ?>Ticket/det/<?php echo $row->number; ?>/<?php echo $url_title = url_title($row->judul); ?>"><?php echo $row->judul; ?></a></h3>
+							<p>IDR <?php echo $row->harga ?></p>
+						</div>
+						<div class="waktu-area-list">
+							<p><span class="glyphicon glyphicon-time"></span> <?php echo $row->tanggal ?></p>
+							<p><span class="glyphicon glyphicon-map-marker"></span> <?php echo $row->alamat ?></p>
+							<hr>
+							<p><?php echo substr($row->deskripsi, 0, 175) ?></p>
+						</div>
+					</div>
+					<div class="col-md-1"></div>
+				</div>
+			<?php } ?>
 			</div>
-			<div class="col-md-3 tick-area">
-				<img src="<?php echo base_url(); ?>uploads/ticket/ticket2.jpg" alt="" class="img-responsive">
-				<div class="judul-area">
-					<p>Tiket ke Dufan</p>
-					<small>IDR 120000</small>
-				</div>
-				<div class="waktu-area">
-					<p><span class="glyphicon glyphicon-time"></span> 12/27/2016 09</p>
-					<small><span class="glyphicon glyphicon-map-marker"></span> Malang</small>
-				</div>
 			</div>
-			<div class="col-md-3 tick-area">
-				<img src="<?php echo base_url(); ?>uploads/ticket/ticket3.jpg" alt="" class="img-responsive">
-				<div class="judul-area">
-					<p>Tiket ke Dufan</p>
-					<small>IDR 120000</small>
-				</div>
-				<div class="waktu-area">
-					<p><span class="glyphicon glyphicon-time"></span> 12/27/2016 09</p>
-					<small><span class="glyphicon glyphicon-map-marker"></span> Malang</small>
-				</div>
-			</div>
+		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+function buildQuery()
+{
+	var loc = location.href.replace(/\\?.*$/, '') + '?';
+	var a = 0, s, v;
+	for (a; a < arguments.length; ++a)
+	{
+		s = arguments[a];
+		v = s.options[s.selectedIndex].value;
+		if (!v)
+			return;
+		else loc += ((a != 0) ? '&' : '') + s.name + '=' + v;
+	}
+	if (loc != '')
+		self.location = loc;
+}
+
+</script>

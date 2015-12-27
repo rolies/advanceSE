@@ -7,6 +7,11 @@ class member_model extends CI_model {
 		parent::__construct();
 	}
 
+	public function read_for_category($name, $filter){
+		$query = "SELECT * FROM $name ORDER BY tanggal $filter";
+		return $this->db->query($query);
+	}
+
 	public function read_all_post($name, $username){
 		$query = "SELECT * FROM $name WHERE user='$username'";
 		return $this->db->query($query);

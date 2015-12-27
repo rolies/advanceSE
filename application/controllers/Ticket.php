@@ -37,7 +37,9 @@ class Ticket extends CI_Controller {
 
 	public function category() {
 			$this->load->model('member_model');
+			$listfilter = $this->input->post('listfilter');
 			$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
+			$data['h_categ'] = $this->member_model->read_for_category('sellpost', $listfilter);		
 			$data['nameuser'] = $_SESSION['username'];
 			$data['page_title'] = "TicketSell - Category";
 			$this->load->view('include/category_header', $data);

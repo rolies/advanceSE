@@ -69,6 +69,7 @@ header {
 .view p {
 	margin-left: 30px;
 }
+
 .view select {
 	font-family: 'montserratregular';
 	height: 50px;
@@ -93,11 +94,13 @@ header {
 }
 .view .tampilan .glyphicon{
 	font-size: 32px;
+}
+.nav-pills li a {
+	color: #FFF;
 	float: right;
+	padding: 4px 6px 2px 8px;
 	margin-left: 20px;
 	border: 1px solid #FFF;
-	padding: 7px;
-	border-radius: 5px;
 }
 
 .ticket-persegi {
@@ -144,6 +147,11 @@ header {
 }
 .waktu-area p{
 	font-family: 'montserratlight';
-	font-size: 12px;
+	font-size: 10px;
 	margin-bottom: 3px;
+}
+.ticket-post-list .col-md-4{
+	margin-bottom: 80px;
+	clear: both;
+
 }
