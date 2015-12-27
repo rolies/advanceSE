@@ -1,0 +1,149 @@
+header {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 100px;
+	-webkit-box-shadow: 0 10px 10px -10px #333;
+	-moz-box-shadow: 0 10px 10px -10px #333;
+	box-shadow: 0 10px 10px -10px #333;
+}
+.log {
+	color: #FFF;
+	font-family: 'montserratlight';
+	font-size: 17px;
+	margin-top: 12px;
+	text-transform: uppercase;
+}
+.user-area {
+	color: #FFF;
+}
+.user-area .glyphicon {
+	font-size: 28px;
+	margin-top: 20px;
+}
+.user-area a, .log a { color: #FFF}
+.user-area .btn {
+	background: #25A3A2;
+	padding: 6px 24px;
+	border-radius: 0;
+	border: none;
+}
+.user-area .name-area {
+	width: 60px;
+	text-align: right;
+	float: left;
+}
+.user-area .pull-right {
+	text-align: right;
+}
+.user-area p {
+	font-family: 'montserratblack';
+	margin-bottom: 0;padding-bottom: 2px;
+	font-size: 16px;
+}
+.user-area .col-sm-3 {
+	margin-right: 0;
+	padding-right: 0;
+}
+.user-area .col-sm-1 {
+	margin-left: 0;
+	padding-left: 0;
+}
+/*Body style*/
+.view {
+	background: #72B7F8;
+	color: #FFF;
+	font-size: 16px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-top: 7%;
+	margin-bottom: 7%;
+}
+.view .row {
+	margin-right: 5%;
+}
+.view label, .view p {
+	font-family: 'montserratlight';
+	margin-top: 12px;
+	text-transform: uppercase;
+}
+.view p {
+	margin-left: 30px;
+}
+.view select {
+	font-family: 'montserratregular';
+	height: 50px;
+	color: #FFF;
+	background: #72B7F8;
+	border: 1px solid #FFF;
+	box-shadow: none;
+	border-radius: 0;
+}
+.view select option{
+	background: #FFF;
+	padding-top: 10px;
+	color: #333;
+}
+.view select option:nth-child(2){
+	padding-bottom: 10px;
+}
+.form-control:focus {
+  border-color: #FFF;
+  box-shadow: none;
+  outline: 0 none;
+}
+.view .tampilan .glyphicon{
+	font-size: 32px;
+	float: right;
+	margin-left: 20px;
+	border: 1px solid #FFF;
+	padding: 7px;
+	border-radius: 5px;
+}
+
+.ticket-persegi {
+	margin-bottom: 70px;
+}
+.ticket-persegi .tick-area{
+	padding: 14px;
+	padding-bottom: 10px;
+	background: #F1F1F3;
+	margin-left: 2%;
+	width: 23%;
+	border: 1px solid #DDD;
+	-webkit-box-shadow: 0px 0px 10px -2px rgba(51,51,51,0.27);
+	-moz-box-shadow: 0px 0px 10px -2px rgba(51,51,51,0.27);
+	box-shadow: 0px 0px 10px -2px rgba(51,51,51,0.27);
+	margin-bottom: 70px;
+	}
+.ticket-persegi .tick-area-first{
+	padding: 14px;
+	background: #F1F1F3;
+	margin-left: 1%;
+	padding-bottom: 10px;
+	width: 23%;
+	border: 1px solid #DDD;
+	-webkit-box-shadow: 0px 0px 10px -2px rgba(51,51,51,0.27);
+	-moz-box-shadow: 0px 0px 10px -2px rgba(51,51,51,0.27);
+	box-shadow: 0px 0px 10px -2px rgba(51,51,51,0.27);
+	margin-bottom: 70px;
+}
+.judul-area, .waktu-area{
+	width: 50%;
+	float: left;
+	margin-top: 16px;
+}
+.judul-area p{
+	font-family: 'montserratbold';
+	margin-bottom: 2px;
+}
+.judul-area small{
+	font-family: 'montserratlight';
+}
+.waktu-area small{
+	font-family: 'montserratlight';
+}
+.waktu-area p{
+	font-family: 'montserratlight';
+	font-size: 12px;
+	margin-bottom: 3px;
+}
