@@ -1,32 +1,52 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-2 col-md-offset-10">
-			<button class="btn btn-info pull-right">CARI</button>
-		</div>
+	<div class="row pencarian">
+		<form action="<?php echo base_url() ?>ticket/search" method="post">
+			<div class="col-md-3">
+				<input type="text" placeholder="Daerah" name="alamat" class="form-control">
+			</div>
+			<div class="col-md-3">
+				<input type="text" placeholder="Keywords" name="keyword" class="form-control">
+			</div>
+			<div class="col-md-3">
+				<select class="form-control" id="inputtipe" name="listcategory">
+					<option value="">CATEGORY</option>
+					<option value="perjalanan">Perjalanan</option>
+				  	<option value="pariwisata">Pariwisata</option>
+				  	<option value="konser">Pertunjukan</option>
+				  	<option value="pertunjukan">Konser</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-md-offset-1">
+				<button class="btn btn-info pull-right pull-right">CARI</button>
+			</div>
+		</form>
 	</div>
 </div>
 <div class="container-fluid view">
 	<div class="row">
-		<div class="col-md-3 col-md-offset-4 tampilan">
+		<div class="col-md-3 col-md-offset-2 tampilan">
 			<p class="pull-left">Tampilan</p>
 			<ul class="nav nav-pills">
 				<li><a href="#post-list" data-toggle="pill"><span class="glyphicon glyphicon-th-list"></span></a></li>
 				<li class="active"><a href="#post-tile" data-toggle="pill"><span class="glyphicon glyphicon-th"></span></a></li>
 			</ul>
 		</div>
-		<div class="col-md-4 col-md-offset-1">
+		<div class="col-md-6 col-md-offset-1">
 			<div class="form-group">
 					<label for="inputtipe" class="col-sm-3 control-label">Urutkan</label>
-					<div class="col-sm-9">
-						<form action="" method="post">
-						   	<select class="form-control" id="inputtipe" name="listfilter" onchange="buildQuery(this,this.form.type)">
-						  		<option value="ASC">acara terbaru</option>
-							  	<option value="DESC">acara terlama</option>
+					<form action="" method="post">
+						<div class="col-sm-5">
+							<select class="form-control" id="inputtipe" name="listfilter" onchange="buildQuery(this,this.form.type)">
+								<option value="-">-</option>
+								<option value="ASC">acara terbaru</option>
+								<option value="DESC">acara terlama</option>
 							</select>
-							<button type="submit">get</button>
-						</form>
-					</div>
-
+						</div>
+						<div class="col-sm-4">
+							<input type="text" class="form-group" name="categoryvalue" value="<?php echo $type ?>" hidden>
+							<button type="submit" class="btn btn-info">get</button>
+						</div>
+					</form>
 				</div>
 		</div>
 	</div>

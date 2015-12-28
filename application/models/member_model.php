@@ -12,10 +12,11 @@ class member_model extends CI_model {
 		return $this->db->query($query);
 	}
 
-	public function read_all_post($name, $username){
-		$query = "SELECT * FROM $name WHERE user='$username'";
+	public function read_all_post($column, $username, $filter){
+		$query = "SELECT * FROM sellpost WHERE $column='$username' ORDER BY tanggal $filter";
 		return $this->db->query($query);
 	}
+
 	public function read_post($name){
 		$query = "SELECT * FROM $name WHERE status='active' ORDER BY tanggal ASC";
 		return $this->db->query($query);
@@ -26,7 +27,7 @@ class member_model extends CI_model {
 	}
 
 	public function read_reserved($name, $username){
-		$query = "SELECT * FROM $name WHERE status='reserved' AND keterangan='$username'";
+		$query = "SELECT * FROM $name WHERE status='reserved' AND keterangan='$username' ORDER BY tanggal DESC";
 		return $this->db->query($query);
 	}
 	public function read_reserved_satu($name, $username){

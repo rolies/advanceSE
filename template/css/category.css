@@ -49,6 +49,12 @@ header {
 	padding-left: 0;
 }
 /*Body style*/
+.pencarian input, .pencarian select{
+	height: 45px;
+	border-radius: 0;
+	background: #D5DCEC;
+	box-shadow: none;
+}
 .view {
 	background: #72B7F8;
 	color: #FFF;
@@ -87,7 +93,7 @@ header {
 .view select option:nth-child(2){
 	padding-bottom: 10px;
 }
-.form-control:focus {
+.view .form-control:focus {
   border-color: #FFF;
   box-shadow: none;
   outline: 0 none;

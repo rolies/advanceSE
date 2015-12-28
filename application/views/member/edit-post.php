@@ -1,21 +1,8 @@
-
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-4 member-area">
-			<img src="<?php echo base_url(); ?>template/img/user.jpg" width="80px" class="pull-left">
-			<div class="greeting">
-				<small>Welcome Back</small>
-				<p><?php echo $name; ?></p>
-				<a href="<?php echo base_url();?>Member/sellpost" class="btn btn-danger ">SELL </a>
-			</div>
-
-			<div class="my-reserve">
-				<a href="<?php echo base_url();?>Member" class="btn btn-info">Back to Dashboard</a>
-			</div>
-		</div>
-
 		
+		<div class="col-md-7">
+			<a href="<?php echo base_url(); ?>Member" class="btn btn-success btn-lg" style="border-radius: 0">Back to Dashboard</a>
+			<hr>
+		</div>
 		<div class="col-md-7 sellpost col-md-offset-1">
 			<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 				<div class="form-group">

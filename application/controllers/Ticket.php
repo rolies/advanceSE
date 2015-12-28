@@ -2,8 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ticket extends CI_Controller {
+
+
 	public function __construct(){
 		parent::__construct();
+
+	}
+
+	public function validate_user() {
+		$is_logged_in = $this->session->userdata('is_logged_in');
+			if (!isset($is_logged_in) || $is_logged_in != true) {
+			}
 	}
 
 	public function det($id, $urldetail){
@@ -35,17 +44,58 @@ class Ticket extends CI_Controller {
 		}
 	}
 
-	public function category() {
+	public function category($type="") {
+		$data['page_title'] = "TicketSell - Category";
+		$this->load->model('member_model');
+		$listfilter = $this->input->post('listfilter');
+		if ($type=="") {
+			$data['h_categ'] = $this->member_model->read_for_category('sellpost', $listfilter);
+			} else{
+				$data['h_categ'] = $this->member_model->read_all_post('tipe', $type, $listfilter);		
+		}
+
+		if (isset($_SESSION['is_logged_in']))
+		{
+			$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
+			$data['nameuser'] = $_SESSION['username'];
+			$this->load->view('include/category_header', $data);
+			$this->load->view('category_view');
+			$this->load->view('include/footer');
+		} else {
 			$this->load->model('member_model');
 			$listfilter = $this->input->post('listfilter');
-			$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
-			$data['h_categ'] = $this->member_model->read_for_category('sellpost', $listfilter);		
-			$data['nameuser'] = $_SESSION['username'];
-			$data['page_title'] = "TicketSell - Category";
 			$this->load->view('include/category_header', $data);
 			$this->load->view('category_view');
 			$this->load->view('include/footer');
 		}
+	}
+	public function search() {
+		$data['page_title'] = "TicketSell - Category";
+		$this->load->model('member_model');
+		$listfilter = $this->input->post('listfilter');
+		$type = $this->input->post('listcategory');
+		$data['type'] = $type;
+		if ($type=="") {
+			$type = $this->input->post('categoryvalue');
+		}
+		$data['h_categ'] = $this->member_model->read_all_post('tipe', $type, $listfilter);
+
+		if (isset($_SESSION['is_logged_in']))
+		{
+			$data['h_img'] = $this->member_model->read_img($_SESSION['username']);
+			$data['nameuser'] = $_SESSION['username'];
+			$this->load->view('include/category_header', $data);
+			$this->load->view('category_view');
+			$this->load->view('include/footer');
+		} else {
+			$this->load->model('member_model');
+			$listfilter = $this->input->post('listfilter');
+			$this->load->view('include/category_header', $data);
+			$this->load->view('category_view');
+			$this->load->view('include/footer');
+		}
+	}
+
 
 	public function mark_reserved($id){
 		if (isset($_SESSION['is_logged_in']))

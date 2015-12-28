@@ -17,7 +17,7 @@
 		<div class="col-md-12 ">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
 			 	<li><a href="<?php echo base_url(); ?>">Home</a></li>
-			  	<li><a href="#">Pariwisata</a></li>
+			  	<li><a href="<?php echo base_url(); ?>Ticket/category/<?php echo $detail_ticket->tipe ?>"><?php echo $detail_ticket->tipe ?></a></li>
 			  	<li class="active"><?php echo "$detail_ticket->judul"; ?></li>
 			  	<p class="pull-right"><a href="#" class="btn btn-info">Pencarian</a></p>
 			</ol>

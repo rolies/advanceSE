@@ -1,47 +1,8 @@
-
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<img src="<?php echo base_url(); ?>template/img/user.jpg" width="80px" class="pull-left">
-			<div class="greeting">
-				<small>Welcome Back</small>
-				<p> Brolin </p>
-				<a href="<?php echo base_url()?>Member" class="btn btn-success">Dashboard</a>
-			</div>
-			<div class="my-selling">
-				<div class=" ticket">
-					<h5> My Ticket Selling</h5>
-				</div>
-				<div class="row">
-					<div class="col-md-5">
-						<img src="<?php echo base_url(); ?>template/img/ticket1.jpg" class="pull-left img-responsive">
-					</div>
-					<div class="curr-sell-small">
-						<strong> Bon Jovi </strong>
-						<p class="harga"> IDR 120.000 </p>
-						<a href="#" class="btn btn-warning ">Reserved </a>
-						
-					</div>
-				</div>
-			</div>
-			<div class="my-reserve">
-				<div class="ticket">
-					<h5> My Ticket Reservation</h5>
-				</div>
-				<div class="row">
-					<div class="col-md-5 curr-res-small">
-						<h5> Trip ke Bromo </h5>
-						<p> IDR 120.000 </p>
-						<a href="#" class="btn btn-warning btn-sm">Cancel </a>
-					</div>
-					<div class="col-md-7">
-						<p> IDR 120.000 </p>
-					</div>
-				</div>
-			</div>
-		</div>
 		
+		<div class="col-md-7">
+			<a href="<?php echo base_url(); ?>Member" class="btn btn-success btn-lg" style="border-radius: 0">Back to Dashboard</a>
+			<hr>
+		</div>
 		<div class="col-md-7 sellpost col-md-offset-1">
 			<form action="" enctype="multipart/form-data" method="post" accept-charset="utf-8" class="form-horizontal">
 				<div class="form-group">
