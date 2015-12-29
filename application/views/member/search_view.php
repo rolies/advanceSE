@@ -53,6 +53,7 @@
 	<div class="row ticket-persegi">
 		<div class="col-md-12">
 			<p>SEMARANG</p>
+			<?php echo $srch ?>
 		</div>
 		<div class="tab-content">
 			<div class="tab-pane active" id="post-tile">
@@ -109,23 +110,3 @@
 		</div>
 	</div>
 </div>
-
-<script type="text/javascript">
-
-function buildQuery()
-{
-	var loc = location.href.replace(/\\?.*$/, '') + '?';
-	var a = 0, s, v;
-	for (a; a < arguments.length; ++a)
-	{
-		s = arguments[a];
-		v = s.options[s.selectedIndex].value;
-		if (!v)
-			return;
-		else loc += ((a != 0) ? '&' : '') + s.name + '=' + v;
-	}
-	if (loc != '')
-		self.location = loc;
-}
-
-</script>

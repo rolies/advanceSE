@@ -203,4 +203,13 @@ footer ul li {
 	color:#fff;
 	padding: 10px 0;
 }
+.form-inline .btn {
+	margin:0;
+	height: 64px;
+	margin-left: -3px;
+	border-radius: 0;
+}
+.help-block {
+	color: #a94442;
+}
 

@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 	public function index() {	
 		$data['page_title'] = 'Sellticket';
+		$srch = $this->input->post('search-hero');
+		$data['srch'] = $srch;
+		
 		$this->load->model('member_model');
 		$data['h_all'] = $this->member_model->read_post('sellpost');
 		$data['h_max'] = $this->member_model->read_max('sellpost');
@@ -15,9 +18,14 @@ class Welcome extends CI_Controller {
 
 	public function register(){
   		$this->load->library('form_validation');
+  		$this->form_validation->set_rules('hp', 'Hp','required|max_length[12]|is_natural');
   		$this->form_validation->set_rules('email', 'Email', 'valid_email');
         if ($this->form_validation->run() == false){
+        	$data['page_title'] = 'Registrasi';
         	$this->load->helper('form');
+        	$this->load->view('detail_header', $data);
+        	$this->load->view('include/register');
+        	$this->load->view('include/footer');
 		} else {
 			$user = array (
 				'username' => $_POST['username'],
@@ -35,6 +43,8 @@ class Welcome extends CI_Controller {
 			}
 		}
 	}
+	
+
 	public function register_success(){
 		$data['page_title'] = 'Register sukses';
 		$this->load->view('member/header-polos', $data);
@@ -60,10 +70,20 @@ class Welcome extends CI_Controller {
 				$this->session->set_userdata($session);
 				redirect('Member');
 			}else {
-				die('Something Wrong');
+				$this->load->helper('form');
+				$data['page_title'] = 'Login';
+	        	$this->load->helper('form');
+	        	$this->load->view('detail_header', $data);
+	        	$this->load->view('include/login');
+	        	$this->load->view('include/footer');
 			}
 		} else {
-			//$this->load->helper('form');
+			$this->load->helper('form');
+			$data['page_title'] = 'Login';
+	        $this->load->helper('form');
+	        $this->load->view('detail_header', $data);
+	        $this->load->view('include/login');
+	        $this->load->view('include/footer');
 		}
 	}
 

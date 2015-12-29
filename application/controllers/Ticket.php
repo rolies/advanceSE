@@ -48,6 +48,7 @@ class Ticket extends CI_Controller {
 		$data['page_title'] = "TicketSell - Category";
 		$this->load->model('member_model');
 		$listfilter = $this->input->post('listfilter');
+		$data['type'] = '';
 		if ($type=="") {
 			$data['h_categ'] = $this->member_model->read_for_category('sellpost', $listfilter);
 			} else{
@@ -72,13 +73,21 @@ class Ticket extends CI_Controller {
 	public function search() {
 		$data['page_title'] = "TicketSell - Category";
 		$this->load->model('member_model');
+		$srch = $this->input->post('search-hero');
+		$data['srch'] = $srch;
 		$listfilter = $this->input->post('listfilter');
 		$type = $this->input->post('listcategory');
 		$data['type'] = $type;
+		
+		if ($srch !="" ) {
+			$data['h_categ'] = $this->member_model->read_for_search($srch);	
+		} else {
+			$data['h_categ'] = $this->member_model->read_all_post('tipe', $type, $listfilter);
+		}
 		if ($type=="") {
 			$type = $this->input->post('categoryvalue');
 		}
-		$data['h_categ'] = $this->member_model->read_all_post('tipe', $type, $listfilter);
+		
 
 		if (isset($_SESSION['is_logged_in']))
 		{
@@ -91,7 +100,7 @@ class Ticket extends CI_Controller {
 			$this->load->model('member_model');
 			$listfilter = $this->input->post('listfilter');
 			$this->load->view('include/category_header', $data);
-			$this->load->view('category_view');
+			$this->load->view('member/search_view');
 			$this->load->view('include/footer');
 		}
 	}

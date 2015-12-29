@@ -61,4 +61,10 @@ class member_model extends CI_model {
 		$this->db->where('username', $username);
 		return $this->db->update('users', $edit);
     }
+
+    public function read_for_search($filter){
+		$query = "SELECT * FROM sellpost WHERE judul LIKE '%$filter%'";
+		return $this->db->query($query);
+	}
+
 }

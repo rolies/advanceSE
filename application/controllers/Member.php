@@ -19,7 +19,7 @@ class Member extends CI_Controller {
 		$this->load->model('member_model');
 		$this->load->model('Sample_model');
 		$this->take_img = $this->member_model->read_img($_SESSION['username']);
-		$this->take_all_post = $this->member_model->read_all_post('user', $_SESSION['username']);
+		$this->take_all_post = $this->member_model->read_all_post('user', $_SESSION['username'],'ASC');
 		$this->take_stu_reserve = $this->member_model->read_reserved_satu('sellpost', $_SESSION['username']);
 		$this->take_deactived = $this->Sample_model->read_deactived('sellpost', $_SESSION['username']);
 		$this->take_reserved = $this->member_model->read_reserved('sellpost', $_SESSION['username']);

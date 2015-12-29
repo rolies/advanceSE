@@ -11,10 +11,11 @@
 				<a href="#" class="btn btn-info btn-lg">CARA KERJA </a>
 				<div class="cari">
 					<h2> CARI </h2>
-					<form action="" role="search">
+					<form action="<?php echo base_url(); ?>Ticket/search" method="post" class="form-inline">
 						<div class="form-group">
 							<input type="text" class="form-control" name="search-hero">
 						</div>
+						<button type="submit" class="btn btn-info"><span class="glyphicon glyphicon-search"></span></button>
 					</form>
 				</div>
 			</div>

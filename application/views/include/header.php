@@ -90,7 +90,7 @@
 							<div class="form-group">
 							    <label for="kota" class="col-sm-5 control-label" >Kota</label>
 							    <div class="col-sm-7">
-							      <input type="text" id="kota" name="kota" placeholder="kota" class="form-control" required="required">
+							      <input type="text" id="kota" name="kota" class="form-control" required="required">
 							    </div>
 							</div>
 							<hr width="60%">

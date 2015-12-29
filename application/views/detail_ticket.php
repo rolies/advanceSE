@@ -10,8 +10,8 @@
     	<?php else: ?>
     		<div class="col-md-3 default-ticket">
 			<img src="<?php echo base_url(); ?>uploads/users/default.jpg" alt="" class="pull-left col-md-5">
-			<a href="<?php echo base_url(); ?>Member" class="btn btn-success">Login</a>
-			<a href="<?php echo base_url(); ?>Member" class="btn btn-link">Register</a>
+			<a href="<?php echo base_url(); ?>welcome/login" class="btn btn-success">Login</a>
+			<a href="<?php echo base_url(); ?>welcome/register" class="btn btn-link">Register</a>
 			</div>
 	<?php endif ?>
 		<div class="col-md-12 ">
@@ -49,6 +49,7 @@
 			<p class="nohp"><?php echo "$detail_ticket_user->hp"; ?><span class="pull-right">Perlihatkan</span></p>
 			<p class="deskripsi"><?php echo "$detail_ticket->deskripsi"; ?></p>
 			
+			<?php if (isset($_SESSION['is_logged_in'])) : ?>
 			
 			<?php if ($today > $date) : ?>
 				
@@ -72,7 +73,15 @@
 					<h3>Tiket Sudah Terjual</h3>
 				<?php endif ?>
 			<?php endif ?>
+				<?php else: ?>
+				<a type="submit" class="btn btn-info" disabled data-toggle="tooltip" data-placement="right" title="Login for Reservation">Reserve</a>
+			<?php endif ?>
 	
 		</div>
 	</div>
 </div>
+<script>
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script>
