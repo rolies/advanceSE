@@ -2,7 +2,7 @@
 				
 		<div class="col-md-7 col-md-offset-1">
 			<ul class="nav nav-pills">
-			  <li class="active" class="absolute-li"><a href="#notifikasi" data-toggle="pill">Notifikasi <div class="notif"> 1</div></a></li>
+			  <li class="active" class="absolute-li"><a href="#notifikasi" data-toggle="pill">Notifikasi</a></li>
 			  <li><a href="#allpost" data-toggle="pill">Semua Post</a></li>
 			  <li><a href="#allreserve" data-toggle="pill">Semua Reservasi</a></li>
 			  <li class="logout pull-right text-center"><a href="<?php echo base_url(); ?>Member/logout" class="logout-link"><span class="glyphicon glyphicon-log-out"></span><br>Logout</a></li>

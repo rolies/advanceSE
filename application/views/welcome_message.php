@@ -8,10 +8,10 @@
 					<p> Posting saja di web kami. jutaan orang yang membutuhkan diluar sana 
 					akan mudah untuk menemukannya </p>
 				</div>
-				<a href="#" class="btn btn-info btn-lg">CARA KERJA </a>
+				
 				<div class="cari">
-					<h2> CARI </h2>
-					<form action="<?php echo base_url(); ?>Ticket/search" method="post" class="form-inline">
+
+					<form action="<?php echo base_url(); ?>Ticket/search" method="post">
 						<div class="form-group">
 							<input type="text" class="form-control" name="search-hero">
 						</div>

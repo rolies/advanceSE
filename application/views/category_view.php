@@ -11,10 +11,10 @@
 				</select>
 			</div>
 			<div class="col-md-3">
-				<input type="text" placeholder="Keywords" name="keyword" class="form-control">
+				<!-- <input type="text" placeholder="Keywords" name="keyword" class="form-control"> -->
+				<button class="btn btn-info pull-right pull-right">CARI</button>
 			</div>
 			<div class="col-md-2 col-md-offset-1">
-				<button class="btn btn-info pull-right pull-right">CARI</button>
 			</div>
 		</form>
 	</div>

@@ -47,7 +47,7 @@
 						</div>
 				    	<?php else: ?>
 				    		<div class="col-md-4 col-md-offset-4">
-							<img src="<?php echo base_url(); ?>uploads/users/default.jpg" alt="" class="pull-left col-md-3">
+							<img src="<?php echo base_url(); ?>uploads/svg/image.svg" alt="" class="pull-left col-md-3">
 							<a href="<?php echo base_url(); ?>welcome/login" class="btn btn-success">Login</a>
 							<a href="<?php echo base_url(); ?>welcome/register" class="btn btn-info">Register</a>
 							</div>

@@ -14,10 +14,12 @@ body {
 }
 /*-------- Header -----------*/
 .navbar {
-   	background: transparent;
+   	background: rgba(113,201,241,0.09);
    	border: none;
 	margin: 0;
-	padding-top: 30px;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(113,201,241,0.1);
 }
 .navbar .btn {
 	text-transform: uppercase;
@@ -203,13 +205,19 @@ footer ul li {
 	color:#fff;
 	padding: 10px 0;
 }
-.form-inline .btn {
+.cari input {float: left; text-transform: capitalize;}
+.cari input:hover {box-shadow: none;}
+.cari .btn:hover {
+	background: #64A4E4;
+	color: #767777;
+}
+.cari .btn {
 	margin:0;
-	height: 64px;
+	height: 62px;
 	margin-left: -3px;
 	border-radius: 0;
+	background: #72B7F8;
+	transition: all .3s linear;
 }
-.help-block {
-	color: #a94442;
-}
+.help-block {color: #a94442;}
 

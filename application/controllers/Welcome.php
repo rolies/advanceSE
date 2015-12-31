@@ -2,18 +2,23 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-	public function index() {	
-		$data['page_title'] = 'Sellticket';
-		$srch = $this->input->post('search-hero');
-		$data['srch'] = $srch;
-		
-		$this->load->model('member_model');
-		$data['h_all'] = $this->member_model->read_post('sellpost');
-		$data['h_max'] = $this->member_model->read_max('sellpost');
-		$this->load->view('include/header', $data);
-		$this->load->view('welcome_message');
-		$this->load->view('include/footer');
-	}
+	public function index() {
+		if (isset($_POST['username']))
+			{
+			$data['page_title'] = 'Sellticket';
+			$srch = $this->input->post('search-hero');
+			$data['srch'] = $srch;
+			
+			$this->load->model('member_model');
+			$data['h_all'] = $this->member_model->read_post('sellpost');
+			$data['h_max'] = $this->member_model->read_max('sellpost');
+			$this->load->view('include/header', $data);
+			$this->load->view('welcome_message');
+			$this->load->view('include/footer');
+			} else { 
+				redirect ('Ticket/category');
+			}
+}
 
 
 	public function register(){

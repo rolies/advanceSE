@@ -36,7 +36,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li><button type="button" class="btn btn-default navbar-btn" href="#modal-signup" role="button" data-toggle="modal">Register</button></li>
 								<!-- <li ><button type="button" class="btn btn-link navbar-btn" >Login</button></li> -->
-								<li>
+								<li>	
 									<div class="dropdown">
 									  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 									    Login

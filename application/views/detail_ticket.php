@@ -43,10 +43,10 @@
 				
 			<?php endif ?>
 			<h3>IDR <?php echo "$detail_ticket->harga"; ?></h3>
-			<img src="<?php echo base_url(); ?>uploads/users/<?php echo $detail_ticket_user->gambar; ?>" alt="User img not found" width="23%" class="pull-left">
+			<img src="<?php echo base_url(); ?>uploads/users/<?php echo $detail_ticket_user->gambar; ?>" alt="User img not found" width="23%" class="pull-left"  style="margin-bottom: 10px">
 			<strong><?php echo "$detail_ticket->user"; ?></strong>
 			<small>Member sejak : <?php echo "$detail_ticket_user->regdate"; ?></small>
-			<p class="nohp"><?php echo "$detail_ticket_user->hp"; ?><span class="pull-right">Perlihatkan</span></p>
+			<p class="nohp"><?php echo "$detail_ticket_user->hp"; ?></p>
 			<p class="deskripsi"><?php echo "$detail_ticket->deskripsi"; ?></p>
 			
 			<?php if (isset($_SESSION['is_logged_in'])) : ?>
